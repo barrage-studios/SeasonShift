@@ -1,0 +1,16 @@
+# Language
+language: objective-c
+
+# Build Matrix
+matrix:
+  include:
+  # Windows Debug
+    name: "Windows Debug"
+    os: windows
+    env:
+      - 
+  # Windows Release
+    name: "Windows Release"
+    os: windows
+    end:
+      -
