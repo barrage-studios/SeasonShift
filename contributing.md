@@ -37,7 +37,7 @@ moment in time. (this is exclusively inclusive of [ITGD-Mondays](https://github.
   
 ## Code Submission
 ### Guidelines and Rules 
-
+**0.** ***ONLY COMMIT YOUR WORK, NEVER COMMIT FOR OTHERS***  
 **1.** Code is not to be submitted to the `master` or `development` branch directly  
 **2.** New features are to be submitted using a `feature` branch attached to `development`  
 **3.** Quick fixes must be submitted using a `fix` branch attached to `dev`  
