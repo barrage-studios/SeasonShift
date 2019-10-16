@@ -68,13 +68,16 @@ moment in time. (this is exclusively inclusive of [ITGD-Mondays](https://github.
 <img src="https://i.imgur.com/FsL1hmq.png" width="550" height="378">  
 
 ### Style Guides
-# NEEDS TO BE FILLED OUT  
+ 
+[Coding Style](https://docs.google.com/document/d/e/2PACX-1vQGvisdq91KzV9-rU7zaC2n8Q13zkBz_J6dzhG8IJjr0-0jn9FQ8qoN5EpOMglrsbLt-yMRui-mwSlp/pub)  
+[Art Style](https://docs.google.com/document/d/e/2PACX-1vTSiKjiqe05X6euX97oL98cui0QubgBPuqLtbvFEDgOrEcO9BOYGIeBxK8OshGIWb9Posbwm8oHx399/pub)  
+[Site Containing all documentation](https://intro-to-game-dev-mondays.github.io/GameDocsSite)
 
 ### Branch Structure  
 ```
 master
 |
-|\developement
+|\development
 | |
 | |\feature/...
 | | |
