@@ -36,7 +36,7 @@ Only code/assets from pre-approved persons can contribute to this project as of 
 moment in time. (this is exclusively inclusive of [ITGD-Mondays](https://github.com/intro-to-game-dev-mondays) members)
   
 ## Code Submission
-### Rules  
+### Guidelines and Rules 
 
 **1.** Code is not to be submitted to the `master` or `development` branch directly  
 **2.** New features are to be submitted using a `feature` branch attached to `development`  
@@ -49,9 +49,23 @@ moment in time. (this is exclusively inclusive of [ITGD-Mondays](https://github.
 **9.** <u>If you are ever confused ask for help, don't just hope you use the right git command</u>
 
 ### How to submit
+> This tutorial is specifically for GitHub Desktop Version 2.2.1  
+> Note: Other versions may have minor differences in procedure
 
-If you have an idea thats not already in development and hasn't been assigned to  
-anyone, please go ahead and create a feature branch for this code {IN PROGRESS}
+**1.** Access branch list
+<img src="https://i.imgur.com/8xGkTK7.png" width="550" height="378">  
+
+**2.** Select the development branch  
+<img src="https://i.imgur.com/5Oi38tH.png" width="550" height="378">  
+
+**3.** Create a new branch using the `feature/xxx` `fix/xxx` naming scheme  
+<img src="https://i.imgur.com/hUWsWVM.png" width="550" height="378">  
+
+**4.** Set the parent branch to development  
+<img src="https://i.imgur.com/6a5Gen9.png" width="550" height="378">  
+
+**5.** and publish branch to github  
+<img src="https://i.imgur.com/FsL1hmq.png" width="550" height="378">  
 
 ### Style Guides
 # NEEDS TO BE FILLED OUT  
