@@ -29,7 +29,7 @@
     - Github Visual Studio Extension
     - Github Desktop
   * Photoshop or GIMP
-  * FL Studio or Audacit
+  * FL Studio or Audacity
 
 ### Access
 Only code/assets from pre-approved persons can contribute to this project as of this  
@@ -38,8 +38,8 @@ moment in time. (this is exclusively inclusive of [ITGD-Mondays](https://github.
 ## Code Submission
 ### Rules  
 
-**1.** No submitting code to the `master` or `dev` branch  
-**2.** New featuresbe submitted using a `feature` branch attached to `dev`  
+**1.** Code is not to be submitted to the `master` or `development` branch directly  
+**2.** New features are to be submitted using a `feature` branch attached to `development`  
 **3.** Quick fixes must be submitted using a `fix` branch attached to `dev`  
 **4.** Only branches that pass CI will be merged  
 **5.** Feature and commit names must be clear  
