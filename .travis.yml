@@ -9,7 +9,7 @@ matrix:
     os: osx
     osx_image: xcode10
     rvm:
-      -2.2        #see before_install for getting RVM stable.
+      - 2.2        #see before_install for getting RVM stable.
     env:
     # - TRAVIS_TAG="Deploy-2019.2.6f1" # This sets the tag on a build
       - PROJECT_NAME="SeasonShift" 
@@ -17,18 +17,19 @@ matrix:
       - DEPLOY_UNITYPACKAGE="path set in deploy script"
       - SYSTEM="win"
   # OSX Build
-  - name: "MacOS"
+  - name: "Mac"
     os: osx
     osx_image: xcode10
     rvm:
-      -2.2
+      - 2.2
     env:
     # - TRAVIS_TAG="Deploy-2019.2.6f1" # This sets the tag on a build
       - PROJECT_NAME="SeasonShift" 
       - UNITY_PROJECT_PATH="Game" 
       - DEPLOY_UNITYPACKAGE="path set in deploy script"
       - SYSTEM="mac"
-
+  allow_failures:
+  - name: "Mac"
 
 
 cache:
