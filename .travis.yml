@@ -5,7 +5,10 @@ rvm:
 - 2.2         #see before_install for getting RVM stable.
 
 env:
-- TRAVIS_TAG="Deploy-2019.2.6f1" PROJECT_NAME="SeasonShift" UNITY_PROJECT_PATH="Game" DEPLOY_UNITYPACKAGE="path set in deploy script"
+# - TRAVIS_TAG="Deploy-2019.2.6f1" # This sets the tag on a build
+- PROJECT_NAME="SeasonShift"
+- UNITY_PROJECT_PATH="Game"
+- DEPLOY_UNITYPACKAGE="path set in deploy script"
 
 
 cache:
@@ -36,6 +39,5 @@ deploy:
   api_key: $GITHUB_TOKEN
   file: $DEPLOY_UNITYPACKAGE
   skip_cleanup: true
-  overwrite: true
-  on:
+  on:-
     tags: true 
