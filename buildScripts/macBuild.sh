@@ -18,6 +18,7 @@ mkdir $UNITY_BUILD_DIR
   -silent-crashes \
   -logFile \
   -projectPath "$PROJECT_PATH" \
+  -buildOSX64Player  "$(pwd)/build/osx/ci-build.app" \
   -quit \
   | tee "$LOG_FILE"
   
