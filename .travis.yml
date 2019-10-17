@@ -39,5 +39,6 @@ deploy:
   api_key: $GITHUB_TOKEN
   file: $DEPLOY_UNITYPACKAGE
   skip_cleanup: true
-  on:-
+  overwrite: true
+  on:
     tags: true 
