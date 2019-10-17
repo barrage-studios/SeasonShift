@@ -16,6 +16,9 @@ matrix:
       - UNITY_PROJECT_PATH="Game" 
       - DEPLOY_UNITYPACKAGE="path set in deploy script"
       - SYSTEM="win"
+    cache:
+      directories:
+        - $UNITY_DOWNLOAD_CACHE
   # OSX Build
   - name: "Mac"
     os: osx
@@ -28,15 +31,12 @@ matrix:
       - UNITY_PROJECT_PATH="Game" 
       - DEPLOY_UNITYPACKAGE="path set in deploy script"
       - SYSTEM="mac"
+    cache:
+      directories:
+        - $UNITY_DOWNLOAD_CACHE
   allow_failures:
   - name: "Mac"
   fast_finish: true
-
-
-cache:
-  directories:
-    - $UNITY_DOWNLOAD_CACHE
-
     
 before_install:
 - chmod a+x ./buildScripts/*.sh
