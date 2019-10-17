@@ -1,12 +1,34 @@
 # language
 language: objective-c
-osx_image: xcode9.2
-rvm:
-- 2.2         #see before_install for getting RVM stable.
 
-env:
-# - TRAVIS_TAG="Deploy-2019.2.6f1" # This sets the tag on a build
-  - PROJECT_NAME="SeasonShift" UNITY_PROJECT_PATH="Game" DEPLOY_UNITYPACKAGE="path set in deploy script"
+# Matrix
+matrix:
+  include:
+  # Windows Build
+  - name: "Windows"
+    os: osx
+    osx_image: xcode10
+    rvm:
+      -2.2        #see before_install for getting RVM stable.
+    env:
+    # - TRAVIS_TAG="Deploy-2019.2.6f1" # This sets the tag on a build
+      - PROJECT_NAME="SeasonShift" 
+      - UNITY_PROJECT_PATH="Game" 
+      - DEPLOY_UNITYPACKAGE="path set in deploy script"
+      - SYSTEM="win"
+  # OSX Build
+  - name: "MacOS"
+    os: osx
+    osx_image: xcode10
+    rvm:
+      -2.2
+    env:
+    # - TRAVIS_TAG="Deploy-2019.2.6f1" # This sets the tag on a build
+      - PROJECT_NAME="SeasonShift" 
+      - UNITY_PROJECT_PATH="Game" 
+      - DEPLOY_UNITYPACKAGE="path set in deploy script"
+      - SYSTEM="mac"
+
 
 
 cache:
@@ -23,7 +45,8 @@ install:
 - ./buildScripts/install-unity.sh
 
 script:
-- ./buildScripts/build.sh
+- if [[ "${SYSTEM}" == "win" ]]; then eval ./buildScripts/winBuild.sh; fi
+- if [[ "${SYSTEM}" == "mac" ]]; then eval ./buildScripts/macBuild.sh; fi
 - ./buildScripts/run-tests.sh
 
 after_success:
