@@ -30,6 +30,7 @@ matrix:
       - SYSTEM="mac"
   allow_failures:
   - name: "Mac"
+  fast_finish: true
 
 
 cache:
