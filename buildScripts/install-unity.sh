@@ -34,6 +34,8 @@ install() {
 	echo "Installing `basename "$PACKAGE_URL"`"
 	if [ ! $SYSTEM == "mac" ] ; then
 		sudo installer -dumplog -package $UNITY_DOWNLOAD_CACHE/`basename "$PACKAGE_URL"` -target /
+	else
+		echo $UNITY_DOWNLOAD_CACHE/`basename "$PACKAGE_URL"`
 	fi
 }
 
