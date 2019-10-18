@@ -32,12 +32,8 @@ install() {
 	download $1
 
 	echo "Installing `basename "$PACKAGE_URL"`"
-	if [ ! $SYSTEM == "mac" ] ; then
-		sudo installer -dumplog -package $UNITY_DOWNLOAD_CACHE/`basename "$PACKAGE_URL"` -target /
-	else
-		echo "Mac install() Wut?"
-		echo $UNITY_DOWNLOAD_CACHE/`basename "$PACKAGE_URL"`
-	fi
+	sudo installer -dumplog -package $UNITY_DOWNLOAD_CACHE/`basename "$PACKAGE_URL"` -target /
+	echo $UNITY_DOWNLOAD_CACHE/`basename "$PACKAGE_URL"`
 }
 
 
@@ -47,4 +43,6 @@ ls $UNITY_DOWNLOAD_CACHE
 
 echo "Installing Unity..."
 install $UNITY_OSX_PACKAGE_URL
-install $UNITY_EXTRA_TARGET_PACKAGE_URL
+if [ ! $SYSTEM == "mac" ] ; then
+	install $UNITY_EXTRA_TARGET_PACKAGE_URL
+fi
