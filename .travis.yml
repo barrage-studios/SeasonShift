@@ -46,6 +46,9 @@ install:
 - pwd
 - ./buildScripts/install-unity.sh
 
+before_script:
+- ./buildScripts/activate-license.sh
+
 script:
 - if [[ "${SYSTEM}" == "win" ]]; then eval ./buildScripts/winBuild.sh; fi
 - if [[ "${SYSTEM}" == "mac" ]]; then eval ./buildScripts/macBuild.sh; fi
@@ -65,3 +68,6 @@ deploy:
   overwrite: true
   on:
     tags: true 
+  
+after_deploy:
+- ./buildScripts/return-license.sh

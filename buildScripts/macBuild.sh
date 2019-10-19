@@ -19,8 +19,6 @@ mkdir $UNITY_BUILD_DIR
   -logFile \
   -projectPath "$PROJECT_PATH" \
   -buildOSX64Player  "$(pwd)/build/osx/ci-build.app" \
-  -username "$USERNAME" \
-  -password "$PASSWORD" \
   -quit \
   | tee "$LOG_FILE"
   
