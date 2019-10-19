@@ -18,3 +18,5 @@
 # About the game
 ### Gameplay Overview
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This game is a 2D barrage shooter centered around survival mechanics with a strong emphasis on pattern recognition, evasive play, and quick reactions.
+### Story Synopsis
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *"A young girl named Makoto has been invaded by sinister seasonal beings. These beings have destroyed her home and she is the last person to stand against them. In order to defeat these beings, she must take to the skies fighting them the best way she knows how to - with bullets. She knows it will take her a full year to overcome these seasonal creatures due to their nature, and has prepared to fight her nightmares in the sky until her planet is saved."*
