@@ -47,7 +47,7 @@ install:
 - ./buildScripts/install-unity.sh
 
 before_script:
-- ./buildScripts/activate-license.sh
+#- ./buildScripts/activate-license.sh
 
 script:
 - if [[ "${SYSTEM}" == "win" ]]; then eval ./buildScripts/winBuild.sh; fi
@@ -70,4 +70,4 @@ deploy:
     tags: true 
   
 after_deploy:
-- ./buildScripts/return-license.sh
+#- ./buildScripts/return-license.sh
