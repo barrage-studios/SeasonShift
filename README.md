@@ -37,3 +37,17 @@
     - Control Settings
   - Game Stats
   - Exit
+
+### Default Controls
+
+- Movement
+  - Up (W or ↑)
+  - Down (S or ↓)
+  - Left (A or ←)
+  - Right (D or →)
+  - Slow Time (LShift)
+- Special
+  - Shoot (Space or Enter)
+  - Switch Power-up (Q)
+  - Use Power-up (E)
+  - Pause Game (Escape)
