@@ -34,8 +34,24 @@ matrix:
     cache:
       directories:
         - $UNITY_DOWNLOAD_CACHE
+  # Linux Build
+  - name: "Linux"
+    os: osx
+    osx_image: xcode10
+    rvm:
+      - 2.2
+    env:
+    # - TRAVIS_TAG="Deploy-2019.2.6f1" # This sets the tag on a build
+      - PROJECT_NAME="SeasonShift" 
+      - UNITY_PROJECT_PATH="Game" 
+      - DEPLOY_UNITYPACKAGE="path set in deploy script"
+      - SYSTEM="lin"
+    cache:
+      directories:
+        - $UNITY_DOWNLOAD_CACHE
   allow_failures:
   - name: "Mac"
+  - name: "Linux"
   fast_finish: true
     
 before_install:
@@ -52,6 +68,7 @@ before_script:
 script:
 - if [[ "${SYSTEM}" == "win" ]]; then eval ./buildScripts/winBuild.sh; fi
 - if [[ "${SYSTEM}" == "mac" ]]; then eval ./buildScripts/macBuild.sh; fi
+- if [[ "${SYSTEM}" == "lin" ]]; then eval ./buildScripts/linBuild.sh; fi
 - ./buildScripts/run-tests.sh
 
 after_success:
