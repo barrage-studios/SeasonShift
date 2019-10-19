@@ -8,6 +8,8 @@ if [ $SYSTEM == "win" ] ; then
 	UNITY_EXTRA_TARGET_PACKAGE_URL="https://download.unity3d.com/download_unity/fe82a0e88406/MacEditorTargetInstaller/UnitySetup-Windows-Mono-Support-for-Editor-2019.2.6f1.pkg"
 elif [ $SYSTEM == "lin" ] ; then
 	UNITY_EXTRA_TARGET_PACKAGE_URL="https://download.unity3d.com/download_unity/fe82a0e88406/MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-2019.2.6f1.pkg"
+elif [ $SYSTEM == "web" ] ; then
+	UNITY_EXTRA_TARGET_PACKAGE_URL="https://download.unity3d.com/download_unity/fe82a0e88406/MacEditorTargetInstaller/UnitySetup-WebGL-Support-for-Editor-2019.2.6f1.pkg"
 fi
 
 
