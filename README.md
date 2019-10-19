@@ -15,3 +15,6 @@
 ![GitHub issues](https://img.shields.io/github/issues-raw/barrage-studios/SeasonShift)
 ![GitHub issues](https://img.shields.io/github/issues-closed-raw/barrage-studios/SeasonShift)
 
+# About the game
+### Gameplay Overview
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This game is a 2D barrage shooter centered around survival mechanics with a strong emphasis on pattern recognition, evasive play, and quick reactions.
