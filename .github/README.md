@@ -9,7 +9,7 @@
 ![Travis (.com) branch](https://img.shields.io/travis/com/barrage-studios/SeasonShift/master?label=Stable%20Build)
 ![Travis (.com) branch](https://img.shields.io/travis/com/barrage-studios/SeasonShift/developement?label=Un-Stable%20Build)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/barrage-studios/SeasonShift?label=Release)
-![GitHub](https://img.shields.io/github/license/barrage-studios/SeasonShift)
+![GitHub](https://img.shields.io/badge/license-Barrage-informational)
 ![GitHub repo size](https://img.shields.io/github/repo-size/barrage-studios/SeasonShift)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/barrage-studios/SeasonShift)
 ![GitHub issues](https://img.shields.io/github/issues-raw/barrage-studios/SeasonShift)
