@@ -6,14 +6,14 @@
     <hr />
 </div>
 
-![Travis (.com) branch](https://img.shields.io/travis/com/barrage-studios/SeasonShift/master?label=Stable%20Build)
-![Travis (.com) branch](https://img.shields.io/travis/com/barrage-studios/SeasonShift/developement?label=Un-Stable%20Build)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/barrage-studios/SeasonShift?label=Release)
-![GitHub](https://img.shields.io/badge/license-Barrage-informational)
+[![Travis (.com) branch](https://img.shields.io/travis/com/barrage-studios/SeasonShift/master?label=Stable%20Build)](https://travis-ci.com/barrage-studios/SeasonShift/branches)
+[![Travis (.com) branch](https://img.shields.io/travis/com/barrage-studios/SeasonShift/developement?label=Un-Stable%20Build)](https://travis-ci.com/barrage-studios/SeasonShift/branches)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/barrage-studios/SeasonShift?label=Release)](https://github.com/barrage-studios/SeasonShift/releases/latest)
+[![GitHub](https://img.shields.io/badge/license-Barrage-informational)](https://github.com/barrage-studios/SeasonShift/.github/LICENSE)
 ![GitHub repo size](https://img.shields.io/github/repo-size/barrage-studios/SeasonShift)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/barrage-studios/SeasonShift)
-![GitHub issues](https://img.shields.io/github/issues-raw/barrage-studios/SeasonShift)
-![GitHub issues](https://img.shields.io/github/issues-closed-raw/barrage-studios/SeasonShift)
+[![GitHub issues](https://img.shields.io/github/issues-raw/barrage-studios/SeasonShift)](https://github.com/barrage-studios/SeasonShift/issues?q=is%3Aopen+is%3Aissue)
+[![GitHub issues](https://img.shields.io/github/issues-closed-raw/barrage-studios/SeasonShift)](https://github.com/barrage-studios/SeasonShift/issues?q=is%3Aissue+is%3Aclosed)
 
 ## Gameplay Overview
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This game is a 2D barrage shooter centered around survival mechanics with a strong emphasis on pattern recognition, evasive play, and quick reactions.
