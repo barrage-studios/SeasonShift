@@ -1,0 +1,106 @@
+# language
+language: objective-c
+
+# Matrix
+matrix:
+  include:
+  # Windows Build
+  - name: "Windows"
+    os: osx
+    osx_image: xcode10
+    rvm:
+      - 2.2        #see before_install for getting RVM stable.
+    env:
+    # - TRAVIS_TAG="Deploy-2019.2.6f1" # This sets the tag on a build
+      - PROJECT_NAME="SeasonShift" 
+      - UNITY_PROJECT_PATH="Game" 
+      - DEPLOY_UNITYPACKAGE="path set in deploy script"
+      - SYSTEM="win"
+    cache:
+      directories:
+        - $UNITY_DOWNLOAD_CACHE
+  # OSX Build
+  - name: "Mac"
+    os: osx
+    osx_image: xcode10
+    rvm:
+      - 2.2
+    env:
+    # - TRAVIS_TAG="Deploy-2019.2.6f1" # This sets the tag on a build
+      - PROJECT_NAME="SeasonShift" 
+      - UNITY_PROJECT_PATH="Game" 
+      - DEPLOY_UNITYPACKAGE="path set in deploy script"
+      - SYSTEM="mac"
+    cache:
+      directories:
+        - $UNITY_DOWNLOAD_CACHE
+  # Linux Build
+  - name: "Linux"
+    os: osx
+    osx_image: xcode10
+    rvm:
+      - 2.2
+    env:
+    # - TRAVIS_TAG="Deploy-2019.2.6f1" # This sets the tag on a build
+      - PROJECT_NAME="SeasonShift" 
+      - UNITY_PROJECT_PATH="Game" 
+      - DEPLOY_UNITYPACKAGE="path set in deploy script"
+      - SYSTEM="lin"
+    cache:
+      directories:
+        - $UNITY_DOWNLOAD_CACHE
+  # WebGL Build
+  - name: "WebGL"
+    os: osx
+    osx_image: xcode10
+    rvm:
+      - 2.2
+    env:
+    # - TRAVIS_TAG="Deploy-2019.2.6f1" # This sets the tag on a build
+      - PROJECT_NAME="SeasonShift" 
+      - UNITY_PROJECT_PATH="Game" 
+      - DEPLOY_UNITYPACKAGE="path set in deploy script"
+      - SYSTEM="web"
+    cache:
+      directories:
+        - $UNITY_DOWNLOAD_CACHE
+  allow_failures:
+  - name: "Mac"
+  - name: "Linux"
+  fast_finish: true
+    
+before_install:
+- chmod a+x ./buildScripts/*.sh
+
+install:
+- cat /etc/hosts
+- pwd
+- ./buildScripts/install-unity.sh
+
+before_script:
+#- ./buildScripts/activate-license.sh
+
+script:
+- if [[ "${SYSTEM}" == "win" ]]; then eval ./buildScripts/winBuild.sh; fi
+- if [[ "${SYSTEM}" == "mac" ]]; then eval ./buildScripts/macBuild.sh; fi
+- if [[ "${SYSTEM}" == "lin" ]]; then eval ./buildScripts/linBuild.sh; fi
+- if [[ "${SYSTEM}" == "web" ]]; then eval ./buildScripts/webBuild.sh; fi
+- ./buildScripts/run-tests.sh
+
+after_success:
+- ./buildScripts/export-unity-package.sh
+
+before_deploy:
+- DEPLOY_UNITYPACKAGE="$(ls -a release/*.zip | head -n 1)"
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file: $DEPLOY_UNITYPACKAGE
+  skip_cleanup: true
+  overwrite: true
+  on:
+    tags: true 
+  
+after_deploy:
+#- ./buildScripts/return-license.sh
