@@ -18,12 +18,16 @@ public static class SceneEngine
         }
         else
         {
-            Application.Quit();
+            #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+            #else
+                Application.Quit();
+            #endif
         }
     }
     public static void PushScene(string str)
     {
-        int id = (SceneManager.GetSceneByName(str).IsValid()) ? SceneManager.GetSceneByName(str).buildIndex : -1;
+        int id = (SceneManager.GetSceneByName(str).IsValid()) ? SceneManager.GetSceneByName(str).buildIndex : -2;
         if (!StateStack.Contains(id))
         {
             StateStack.Push(id);
