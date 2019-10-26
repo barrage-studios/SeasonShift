@@ -44,9 +44,13 @@ public static class SceneEngine
             StateStack.Push(scene);
             SceneManager.LoadScene(SceneList[scene]);
         }
+        else if (StateStack.Count == SceneManager.sceneCountInBuildSettings)
+        {
+            Debug.LogWarning("All scenes pushed");
+        }
         else
         {
-            Debug.LogError("Scene [" + scene.ToString() + "] already exists");
+            Debug.LogWarning("Scene [" + scene.ToString() + "] already exists");
         }
     }
 }
