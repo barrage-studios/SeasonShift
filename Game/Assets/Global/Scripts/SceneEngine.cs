@@ -4,8 +4,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public static class SceneEngine
 {
-    private static Stack<int> StateStack = new Stack<int>(new[] { 0 });
-    public static int PeekStack()
+    public enum Scene
+    {
+        INTRO,
+        MENU,
+        GAME
+    }
+    private static Dictionary<Scene, string> SceneList = new Dictionary<Scene, string>
+    {
+        { Scene.INTRO, "IntroScene" },
+        { Scene.MENU, "MenuScene" },
+        { Scene.GAME, "GameScene" }
+    };
+    private static Stack<Scene> StateStack = new Stack<Scene>(new Scene[] { Scene.INTRO });
+    public static Scene PeekStack()
     {
         return StateStack.Peek();
     }
@@ -14,7 +26,7 @@ public static class SceneEngine
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {
             StateStack.Pop();
-            SceneManager.LoadScene(StateStack.Peek());
+            SceneManager.LoadScene(SceneList[StateStack.Peek()]);
         }
         else
         {
@@ -25,21 +37,16 @@ public static class SceneEngine
             #endif
         }
     }
-    public static void PushScene(string str)
+    public static void PushScene(Scene scene)
     {
-        int id = (SceneManager.GetSceneByName(str).IsValid()) ? SceneManager.GetSceneByName(str).buildIndex : -2;
-        if (!StateStack.Contains(id))
+        if (!StateStack.Contains(scene))
         {
-            StateStack.Push(id);
-            SceneManager.LoadScene(id);
-        }
-        else if (id == -1)
-        {
-            Debug.LogError("Scene [" + str + "] does not exist");
+            StateStack.Push(scene);
+            SceneManager.LoadScene(SceneList[scene]);
         }
         else
         {
-            Debug.LogError("Scene [" + id + "][" + str + "] already exists");
+            Debug.LogError("Scene [" + scene.ToString() + "] already exists");
         }
     }
 }

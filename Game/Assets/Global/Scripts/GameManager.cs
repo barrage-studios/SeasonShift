@@ -24,9 +24,9 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             if (SceneEngine.PeekStack() == 0)
-                SceneEngine.PushScene("MenuScene");
+                SceneEngine.PushScene(SceneEngine.Scene.MENU);
             else
-                SceneEngine.PushScene("GameScene");
+                SceneEngine.PushScene(SceneEngine.Scene.GAME);
         }
         else if (Input.GetKeyDown(KeyCode.Backspace))
         {
