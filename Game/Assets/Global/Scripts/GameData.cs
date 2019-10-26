@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameData : MonoBehaviour
 {
+    private double runTime = 0;
     static GameData _instance; // Track instances of this class
     void Start()
     {
@@ -21,6 +22,7 @@ public class GameData : MonoBehaviour
     }
     void Update()
     {
+        runTime += .02;
         if (Input.GetKeyDown(KeyCode.Return))
         {
             if (SceneEngine.PeekStack() == 0)
@@ -33,5 +35,12 @@ public class GameData : MonoBehaviour
             SceneEngine.PopScene();
         }
     }
-
+    private void OnDestroy()
+    {
+        SaveData();
+    }
+    public void SaveData()
+    {
+        Debug.Log("Runtime [" + runTime + "]");
+    }
 }
