@@ -17,12 +17,15 @@ public class GameData : MonoBehaviour
         else // If we don't exist, Create ourselves
         {
             _instance = this;
-            GameObject.DontDestroyOnLoad(this.gameObject); // Block deletion
+            DontDestroyOnLoad(_instance.gameObject); // Block deletion
         }
+    }
+    private void FixedUpdate()
+    {
+        runTime += UnityEngine.Time.deltaTime;
     }
     void Update()
     {
-        runTime += .02;
         if (Input.GetKeyDown(KeyCode.Return))
         {
             if (SceneEngine.PeekStack() == 0)
@@ -34,10 +37,6 @@ public class GameData : MonoBehaviour
         {
             SceneEngine.PopScene();
         }
-    }
-    private void OnDestroy()
-    {
-        SaveData();
     }
     public void SaveData()
     {
