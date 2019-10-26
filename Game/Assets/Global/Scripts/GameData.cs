@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameData : MonoBehaviour
 {
-    static GameManager _instance; // Track instances of this class
+    static GameData _instance; // Track instances of this class
     void Start()
     {
         if (_instance != null) // If we exist, block creation
@@ -24,9 +24,9 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             if (SceneEngine.PeekStack() == 0)
-                SceneEngine.PushScene(SceneEngine.Scene.MENU);
+                SceneEngine.PushScene(SceneEngine.Scenes.MENU);
             else
-                SceneEngine.PushScene(SceneEngine.Scene.GAME);
+                SceneEngine.PushScene(SceneEngine.Scenes.GAME);
         }
         else if (Input.GetKeyDown(KeyCode.Backspace))
         {

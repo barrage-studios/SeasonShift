@@ -4,29 +4,29 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public static class SceneEngine
 {
-    public enum Scene
+    public enum Scenes
     {
         INTRO,
         MENU,
         GAME
     }
-    private static Dictionary<Scene, string> SceneList = new Dictionary<Scene, string>
+    private static Dictionary<Scenes, string> SceneList = new Dictionary<Scenes, string>
     {
-        { Scene.INTRO, "IntroScene" },
-        { Scene.MENU, "MenuScene" },
-        { Scene.GAME, "GameScene" }
+        { Scenes.INTRO, "IntroScene" },
+        { Scenes.MENU, "MenuScene" },
+        { Scenes.GAME, "GameScene" }
     };
-    private static Stack<Scene> StateStack = new Stack<Scene>(new Scene[] { Scene.INTRO });
-    public static Scene PeekStack()
+    private static Stack<Scenes> SceneStack = new Stack<Scenes>(new Scenes[] { Scenes.INTRO });
+    public static Scenes PeekStack()
     {
-        return StateStack.Peek();
+        return SceneStack.Peek();
     }
     public static void PopScene()
     {
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {
-            StateStack.Pop();
-            SceneManager.LoadScene(SceneList[StateStack.Peek()]);
+            SceneStack.Pop();
+            SceneManager.LoadScene(SceneList[SceneStack.Peek()]);
         }
         else
         {
@@ -37,14 +37,14 @@ public static class SceneEngine
             #endif
         }
     }
-    public static void PushScene(Scene scene)
+    public static void PushScene(Scenes scene)
     {
-        if (!StateStack.Contains(scene))
+        if (!SceneStack.Contains(scene))
         {
-            StateStack.Push(scene);
+            SceneStack.Push(scene);
             SceneManager.LoadScene(SceneList[scene]);
         }
-        else if (StateStack.Count == SceneManager.sceneCountInBuildSettings)
+        else if (SceneStack.Count == SceneManager.sceneCountInBuildSettings)
         {
             Debug.LogWarning("All scenes pushed");
         }
