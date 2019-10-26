@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
         if (_instance != null) // If we exist, block creation
         {
             Destroy(this.gameObject);
-            Debug.LogError("Tried to instace the game manager twice!");
+            // Debug.LogError("Tried to instace the game manager twice!");
             return;
         }
         else // If we don't exist, Create ourselves
@@ -23,11 +23,14 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            SceneEngine.NextScene();
+            if (SceneEngine.PeekStack() == 0)
+                SceneEngine.PushScene("MenuScene");
+            else
+                SceneEngine.PushScene("GameScene");
         }
         else if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            SceneEngine.PrevScene();
+            SceneEngine.PopScene();
         }
     }
 

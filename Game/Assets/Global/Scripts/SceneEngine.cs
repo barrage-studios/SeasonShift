@@ -4,45 +4,38 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public static class SceneEngine
 {
-    public static void NextScene()
+    private static Stack<int> StateStack = new Stack<int>(new[] { 0 });
+    public static int PeekStack()
     {
-        if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings - 1)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        return StateStack.Peek();
     }
-    public static void PrevScene()
+    public static void PopScene()
     {
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            StateStack.Pop();
+            SceneManager.LoadScene(StateStack.Peek());
         }
         else
         {
             Application.Quit();
         }
     }
-    public static void LoadExactScene(int num)
+    public static void PushScene(string str)
     {
-        if (num > 0 || num < SceneManager.sceneCount)
+        int id = (SceneManager.GetSceneByName(str).IsValid()) ? SceneManager.GetSceneByName(str).buildIndex : -1;
+        if (!StateStack.Contains(id))
         {
-            SceneManager.LoadScene(num);
+            StateStack.Push(id);
+            SceneManager.LoadScene(id);
+        }
+        else if (id == -1)
+        {
+            Debug.LogError("Scene [" + str + "] does not exist");
         }
         else
         {
-            Debug.LogError("Scene [" + num + "] does not exist");
-        }
-    }
-    public static void LoadExactScene(string str)
-    {
-        int num = SceneManager.GetSceneByName(str).buildIndex;
-        if (num > 0 || num < SceneManager.sceneCountInBuildSettings)
-        {
-            SceneManager.LoadScene(num);
-        }
-        else
-        {
-            Debug.LogError("Scene [" + num + "][" + str + "] does not exist");
+            Debug.LogError("Scene [" + id + "][" + str + "] already exists");
         }
     }
 }
