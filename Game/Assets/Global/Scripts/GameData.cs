@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameData : MonoBehaviour
 {
     private double runTime = 0;
-    static GameData _instance; // Track instances of this class
+    public static GameData _instance; // Track instances of this class
     void Start()
     {
         if (_instance != null) // If we exist, block creation

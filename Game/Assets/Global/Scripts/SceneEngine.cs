@@ -30,11 +30,7 @@ public static class SceneEngine
         }
         else
         {
-            #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-            #else
-                Application.Quit();
-            #endif
+            CloseApp();
         }
     }
     public static void PushScene(Scenes scene)
@@ -52,5 +48,15 @@ public static class SceneEngine
         {
             Debug.LogWarning("Scene [" + scene.ToString() + "] already exists");
         }
+    }
+
+    public static void CloseApp()
+    {
+        GameData._instance.SaveData();
+    #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+    #else
+        Application.Quit();
+    #endif
     }
 }
