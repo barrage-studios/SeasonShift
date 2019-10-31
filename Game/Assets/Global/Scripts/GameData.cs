@@ -28,14 +28,19 @@ public class GameData : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            if (SceneEngine.PeekStack() == 0)
-                SceneEngine.PushScene(SceneEngine.Scenes.MENU);
+            if (SceneEngine.PeekStack().Equals(SceneEngine.Scenes.INTRO))
+                SceneEngine.PushScene(SceneEngine.Scenes.MENU, false);
+            else if (SceneEngine.PeekStack().Equals(SceneEngine.Scenes.MENU))
+                SceneEngine.PushScene(SceneEngine.Scenes.GAME, false);
             else
-                SceneEngine.PushScene(SceneEngine.Scenes.GAME);
+                SceneEngine.PushScene(SceneEngine.Scenes.PAUSE, true);
         }
         else if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            SceneEngine.PopScene();
+            if (!SceneEngine.PeekAdditive().Equals(3))
+                SceneEngine.PopScene(false);
+            else
+                SceneEngine.PopScene(true);
         }
     }
     public void SaveData()
