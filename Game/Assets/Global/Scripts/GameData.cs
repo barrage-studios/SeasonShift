@@ -29,18 +29,13 @@ public class GameData : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             if (SceneEngine.PeekStack().Equals(SceneEngine.Scenes.INTRO))
-                SceneEngine.PushScene(SceneEngine.Scenes.MENU, false);
+                SceneEngine.PushScene(SceneEngine.Scenes.MENU);
             else if (SceneEngine.PeekStack().Equals(SceneEngine.Scenes.MENU))
-                SceneEngine.PushScene(SceneEngine.Scenes.GAME, false);
-            else
-                SceneEngine.PushScene(SceneEngine.Scenes.PAUSE, true);
+                SceneEngine.PushScene(SceneEngine.Scenes.GAME);
         }
         else if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            if (!SceneEngine.PeekAdditive().Equals(3))
-                SceneEngine.PopScene(false);
-            else
-                SceneEngine.PopScene(true);
+            SceneEngine.PopScene();
         }
     }
     public void SaveData()

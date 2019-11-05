@@ -8,69 +8,37 @@ public static class SceneEngine
     {
         INTRO,
         MENU,
-        GAME,
-        PAUSE
+        GAME
     }
     private static Dictionary<Scenes, string> SceneList = new Dictionary<Scenes, string>
     {
         { Scenes.INTRO, "IntroScene" },
         { Scenes.MENU, "MenuScene" },
-        { Scenes.GAME, "GameScene" },
-        { Scenes.PAUSE, "PauseScene" }
+        { Scenes.GAME, "GameScene" }
     };
     private static Stack<Scenes> SceneStack = new Stack<Scenes>(new Scenes[] { Scenes.INTRO });
-    private static Stack<Scenes> AdditiveStack = new Stack<Scenes>();
     public static Scenes PeekStack()
     {
         return SceneStack.Peek();
     }
-    public static Scenes PeekAdditive()
+    public static void PopScene()
     {
-        return AdditiveStack.Peek();
-    }
-    public static void PopScene(bool additive)
-    {
-        if (!additive)
+        if (SceneManager.GetActiveScene().buildIndex != 0)
         {
-            if (SceneManager.GetActiveScene().buildIndex != 0)
-            {
-                SceneStack.Pop();
-                SceneManager.LoadScene(SceneList[SceneStack.Peek()]);
-            }
-            else
-            {
-                CloseApp();
-            }
+            SceneStack.Pop();
+            SceneManager.LoadScene(SceneList[SceneStack.Peek()]);
         }
         else
         {
-            if (AdditiveStack.Count > 0)
-            {
-                SceneManager.UnloadSceneAsync(SceneList[AdditiveStack.Peek()]);
-                SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneList[SceneStack.Peek()]));
-                AdditiveStack.Pop();
-            }
-            else
-            {
-                Debug.LogError("Trying to pop additive scene when no additive scenes exist");
-            }
+            CloseApp();
         }
     }
-    public static void PushScene(Scenes scene, bool additive)
+    public static void PushScene(Scenes scene)
     {
         if (!SceneStack.Contains(scene))
         {
-            if (!additive)
-            {
-                SceneStack.Push(scene);
-                SceneManager.LoadScene(SceneList[scene]);
-            }
-            else
-            {
-                AdditiveStack.Push(scene);
-                SceneManager.LoadSceneAsync(SceneList[scene]);
-                SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneList[AdditiveStack.Peek()]));
-            }
+            SceneStack.Push(scene);
+            SceneManager.LoadScene(SceneList[scene]);
         }
         else if (SceneStack.Count == SceneManager.sceneCountInBuildSettings)
         {
@@ -81,7 +49,6 @@ public static class SceneEngine
             Debug.LogWarning("Scene [" + scene.ToString() + "] already exists");
         }
     }
-
     public static void CloseApp()
     {
         GameData._instance.SaveData();
