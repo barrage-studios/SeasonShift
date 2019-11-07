@@ -21,26 +21,30 @@ public class GameData : MonoBehaviour
         {
             _instance = this;
             DontDestroyOnLoad(_instance.gameObject); // Block deletion
-            playerProfile = LoadData();
-            if (playerProfile == null)
+            playerProfile = LoadData(); // Load profile
+            if (playerProfile == null) // If load fails create a fresh player
+            {
+                Debug.Log("Profile was null!");
                 playerProfile = new Profile("Player", 0.0f);
+            }
+            playTime = playerProfile.getTime(); // Load in stored data
         }
     }
     private void FixedUpdate()
     {
-        if (SceneEngine.PeekStack().Equals(SceneEngine.Scenes.MENU))
+        if (SceneEngine.PeekStack().Equals(SceneEngine.Scenes.MENU)) // Only add time in Menu Scene
             playTime += UnityEngine.Time.deltaTime;
     }
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return)) // Advance Scenes
         {
             if (SceneEngine.PeekStack().Equals(SceneEngine.Scenes.INTRO))
                 SceneEngine.PushScene(SceneEngine.Scenes.MENU);
             else
                 SceneEngine.PushScene(SceneEngine.Scenes.GAME);
         }
-        else if (Input.GetKeyDown(KeyCode.Backspace))
+        else if (Input.GetKeyDown(KeyCode.Backspace)) // Drop scenes
         {
             SceneEngine.PopScene();
         }
@@ -49,12 +53,16 @@ public class GameData : MonoBehaviour
     {
         return this.playTime;
     }
-    public Profile LoadData()
+    public Profile LoadData() // Load in profile from file
     {
         string destination = Application.persistentDataPath + "/save.dat";
         FileStream file;
 
-        if (File.Exists(destination)) file = File.OpenRead(destination);
+        if (File.Exists(destination))
+        {
+            Debug.Log("Player profile found");
+            file = File.OpenRead(destination);
+        }
         else
         {
             Debug.LogError("No Player profile exists, will create one on save");
@@ -62,22 +70,29 @@ public class GameData : MonoBehaviour
         }
 
         BinaryFormatter bf = new BinaryFormatter();
-        Profile profile = (Profile)bf.Deserialize(file);
+        Profile profile = (Profile) bf.Deserialize(file);
         file.Close();
-
+        Debug.Log("Time saved to file was " + profile.getTime().ToString());
         return profile;
     }
-    public void SaveData()
+    public void SaveData() // Save profile to file
     {
         string destination = Application.persistentDataPath + "/save.dat";
         FileStream file;
 
-        if (File.Exists(destination)) file = File.OpenWrite(destination);
-        else file = File.Create(destination);
-
-        Profile profile = new Profile(playerProfile.getName(), playTime + playerProfile.getTime());
+        if (File.Exists(destination))
+        {
+            Debug.Log("File Found, overwriting save data");
+            file = File.OpenWrite(destination);
+        }
+        else
+        {
+            Debug.Log("No save file found, creating new file");
+            file = File.Create(destination);
+        }
+        Debug.Log("Time elapsed in game is " + playTime.ToString());
         BinaryFormatter bf = new BinaryFormatter();
-        bf.Serialize(file, profile);
+        bf.Serialize(file, new Profile(playerProfile.getName(), playTime));
         file.Close();
     }
 }
