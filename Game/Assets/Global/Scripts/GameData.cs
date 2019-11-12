@@ -8,6 +8,7 @@ public class GameData : MonoBehaviour
 {
     public Profile playerProfile = null;
     private float playTime = 0;
+    private bool playing = false;
     public static GameData _instance; // Track instances of this class
     void Start()
     {
@@ -32,29 +33,20 @@ public class GameData : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (SceneEngine.PeekStack().Equals(SceneEngine.Scenes.MENU)) // Only add time in Menu Scene
+        if (playing) // Only add time in Menu Scene
             playTime += UnityEngine.Time.deltaTime;
-    }
-    public void Update()
-    {
-        if (SceneEngine.PeekStack().Equals(SceneEngine.Scenes.GAME))
-        {
-            if (Input.GetKeyDown(KeyCode.Return)) // Advance Scenes
-            {
-                if (SceneEngine.PeekStack().Equals(SceneEngine.Scenes.INTRO))
-                    SceneEngine.PushScene(SceneEngine.Scenes.MENU);
-                else
-                    SceneEngine.PushScene(SceneEngine.Scenes.GAME);
-            }
-            else if (Input.GetKeyDown(KeyCode.Backspace)) // Drop scenes
-            {
-                SceneEngine.PopScene();
-            }
-        }
     }
     public float getTime()
     {
         return this.playTime;
+    }
+    public bool getPlaying()
+    {
+        return playing;
+    }
+    public void setPlaying(bool boolean)
+    {
+        playing = boolean;
     }
     public Profile LoadData() // Load in profile from file
     {

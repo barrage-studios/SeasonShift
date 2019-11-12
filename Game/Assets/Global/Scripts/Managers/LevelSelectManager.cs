@@ -15,6 +15,6 @@ public class LevelSelectManager : MonoBehaviour
     }
     public void SelectLevel(int level)
     {
-        SceneEngine.PushScene(SceneEngine.Scenes.GAME);
+
     }
 }

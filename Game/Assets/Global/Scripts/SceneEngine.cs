@@ -8,15 +8,13 @@ public static class SceneEngine
     {
         INTRO,
         MENU,
-        LEVEL,
-        GAME
+        LEVEL
     }
     private static Dictionary<Scenes, string> SceneList = new Dictionary<Scenes, string>
     {
         { Scenes.INTRO, "IntroScene" },
         { Scenes.MENU, "MenuScene" },
-        { Scenes.LEVEL, "LevelSelect"},
-        { Scenes.GAME, "GameScene" }
+        { Scenes.LEVEL, "LevelSelect"}
     };
     private static Stack<Scenes> SceneStack = new Stack<Scenes>(new Scenes[] { Scenes.INTRO });
     public static Scenes PeekStack()
