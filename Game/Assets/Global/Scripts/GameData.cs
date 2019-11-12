@@ -37,7 +37,7 @@ public class GameData : MonoBehaviour
     }
     public void Update()
     {
-        if (!SceneEngine.PeekStack().Equals(SceneEngine.Scenes.MENU))
+        if (SceneEngine.PeekStack().Equals(SceneEngine.Scenes.GAME))
         {
             if (Input.GetKeyDown(KeyCode.Return)) // Advance Scenes
             {
