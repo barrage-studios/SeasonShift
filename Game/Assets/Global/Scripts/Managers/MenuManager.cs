@@ -19,7 +19,7 @@ public class MenuManager : MonoBehaviour
     // Button Functions
     public void PlayClicked()
     {
-        SceneEngine.PushScene(SceneEngine.Scenes.GAME);
+        SceneEngine.PushScene(SceneEngine.Scenes.LEVEL);
     }
     public void SettingsClicked()
     {
