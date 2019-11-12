@@ -15,6 +15,20 @@ public class LevelSelectManager : MonoBehaviour
     }
     public void SelectLevel(int level)
     {
-
+        switch (level)
+        {
+            case 1:
+                SceneEngine.PushScene(SceneEngine.Scenes.SPRING);
+                break;
+            case 2:
+                SceneEngine.PushScene(SceneEngine.Scenes.SUMMER);
+                break;
+            case 3:
+                SceneEngine.PushScene(SceneEngine.Scenes.FALL);
+                break;
+            case 4:
+                SceneEngine.PushScene(SceneEngine.Scenes.WINTER);
+                break;
+        }
     }
 }
