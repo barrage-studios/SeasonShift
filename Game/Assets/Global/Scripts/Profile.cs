@@ -8,12 +8,7 @@ public class Profile
     // Data
     string name = "Player";
     float playtime = 0.0f;
-    Dictionary<LevelManager.Levels, bool> mapsCleared = new Dictionary<LevelManager.Levels, bool>() {
-        {LevelManager.Levels.SPRING, false},
-        {LevelManager.Levels.SUMMER, false },
-        {LevelManager.Levels.FALL, false },
-        {LevelManager.Levels.WINTER, false }
-    };
+    int LevelsCleared = 0;
     // Functions
     public Profile(string name, float playtime)
     {
@@ -44,15 +39,8 @@ public class Profile
     {
         return this.playtime;
     }
-    public bool getClearedStatus(LevelManager.Levels level)
+    public int getLevelsCleared()
     {
-        if (mapsCleared[level].Equals(true))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return LevelsCleared;
     }
 }
