@@ -8,13 +8,21 @@ public static class SceneEngine
     {
         INTRO,
         MENU,
-        LEVEL
+        LEVEL,
+        SPRING,
+        SUMMER,
+        FALL,
+        WINTER
     }
     private static Dictionary<Scenes, string> SceneList = new Dictionary<Scenes, string>
     {
         { Scenes.INTRO, "IntroScene" },
         { Scenes.MENU, "MenuScene" },
-        { Scenes.LEVEL, "LevelSelect"}
+        { Scenes.LEVEL, "LevelSelect"},
+        { Scenes.SPRING, "Spring"},
+        { Scenes.SUMMER, "Summer"},
+        { Scenes.FALL, "Fall"},
+        { Scenes.WINTER, "Winter"}
     };
     private static Stack<Scenes> SceneStack = new Stack<Scenes>(new Scenes[] { Scenes.INTRO });
     public static Scenes PeekStack()
@@ -34,19 +42,22 @@ public static class SceneEngine
         }
     }
     public static void PushScene(Scenes scene)
-    {
-        if (!SceneStack.Contains(scene))
+    {   
+        if (SceneStack.Contains(scene))
         {
-            SceneStack.Push(scene);
-            SceneManager.LoadScene(SceneList[scene]);
+            Debug.LogError("Scene [" + scene.ToString() + "] already exists");
         }
-        else if (SceneStack.Count == SceneManager.sceneCountInBuildSettings)
+        else if ( SceneStack.Contains(Scenes.SPRING) ||
+                  SceneStack.Contains(Scenes.SUMMER) ||
+                  SceneStack.Contains(Scenes.FALL) ||
+                  SceneStack.Contains(Scenes.WINTER) )
         {
-            Debug.LogWarning("All scenes pushed");
+            Debug.LogError("Cannot push multiple levels at the same time!");
         }
         else
         {
-            Debug.LogWarning("Scene [" + scene.ToString() + "] already exists");
+            SceneStack.Push(scene);
+            SceneManager.LoadScene(SceneList[scene]);
         }
     }
     public static void CloseApp()
