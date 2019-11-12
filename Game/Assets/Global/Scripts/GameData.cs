@@ -37,16 +37,19 @@ public class GameData : MonoBehaviour
     }
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return)) // Advance Scenes
+        if (!SceneEngine.PeekStack().Equals(SceneEngine.Scenes.MENU))
         {
-            if (SceneEngine.PeekStack().Equals(SceneEngine.Scenes.INTRO))
-                SceneEngine.PushScene(SceneEngine.Scenes.MENU);
-            else
-                SceneEngine.PushScene(SceneEngine.Scenes.GAME);
-        }
-        else if (Input.GetKeyDown(KeyCode.Backspace)) // Drop scenes
-        {
-            SceneEngine.PopScene();
+            if (Input.GetKeyDown(KeyCode.Return)) // Advance Scenes
+            {
+                if (SceneEngine.PeekStack().Equals(SceneEngine.Scenes.INTRO))
+                    SceneEngine.PushScene(SceneEngine.Scenes.MENU);
+                else
+                    SceneEngine.PushScene(SceneEngine.Scenes.GAME);
+            }
+            else if (Input.GetKeyDown(KeyCode.Backspace)) // Drop scenes
+            {
+                SceneEngine.PopScene();
+            }
         }
     }
     public float getTime()
