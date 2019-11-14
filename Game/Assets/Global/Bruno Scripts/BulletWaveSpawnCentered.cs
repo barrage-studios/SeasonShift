@@ -1,22 +1,27 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
 
 public class BulletWaveSpawnCentered : MonoBehaviour
 {
+
+    public bool repeatUntilDeath = false; // if activated it will continue the cycle until the gameobject it is attached to is killed
+
     public bool repBulTimeCAngle = false;
     public bool repBulTime = false;
     public bool repBulCircle = false;
     public bool rotCircle = false;
     public bool coneShooting = false;
-
-    public GameObject spawner;
-    public GameObject box;  //object you want spawned goes in here
     public float timeDelay = 0.0f;
+
+    public bool repeatTimeLimited = false;
+    public float endTime = 0.0f;
+
+
+    public GameObject bullets;  //object you want spawned goes in here
     public float zRotation = 0.0f;  // Rotation counter clockwise 
     public float timeInterval = 0.0f;
-    public float endTime = 0.0f; 
     public float changeInAngle = 0.0f;
     public int circleSpokes = 0;
     public float startDegree = 0.0f; /// must be smaller than the endDegree
@@ -71,55 +76,87 @@ public class BulletWaveSpawnCentered : MonoBehaviour
 
         int check = 1;
 
-
-        while (amTime < endTime)
-        {
-            switch (check)
+        if (repeatUntilDeath) {
+            while (true)
             {
-                case 1:
-                    while (changes < degreeShifts)
-                    {
-                        yield return new WaitForSeconds(timeInterval);
-                        Instantiate(box, (spawner.transform.position), (Quaternion.Euler(xRotation, yRotation, zRotation)));
+                switch (check)
+                {
+                    case 1:
+                        while (changes < degreeShifts)
+                        {
+                            yield return new WaitForSeconds(timeInterval);
+                            Instantiate(bullets, (GetComponent<Transform>().position), (Quaternion.Euler(xRotation, yRotation, zRotation)));
 
-                        zRotation = zRotation + changeInAngle;
-                        changes = changes + 1;
-                    }
-                    check = 2;
+                            zRotation = zRotation + changeInAngle;
+                            changes = changes + 1;
+                        }
+                        check = 2;
 
-                    break;
+                        break;
 
-                case 2:
-                    while (changes > 0)
-                    {
-                        yield return new WaitForSeconds(timeInterval);
-                        Instantiate(box, (spawner.transform.position), (Quaternion.Euler(xRotation, yRotation, zRotation)));
+                    case 2:
+                        while (changes > 0)
+                        {
+                            yield return new WaitForSeconds(timeInterval);
+                            Instantiate(bullets, (GetComponent<Transform>().position), (Quaternion.Euler(xRotation, yRotation, zRotation)));
 
-                        zRotation = zRotation - changeInAngle;
-                        changes = changes - 1;
-                    }
-                    check = 1;
+                            zRotation = zRotation - changeInAngle;
+                            changes = changes - 1;
+                        }
+                        check = 1;
 
-                    break;
+                        break;
 
-                default:
+                    default:
 
-                    break;
+                        break;
 
+                }
             }
-
-
-
         }
 
+        if (repeatTimeLimited)
+        {
+            while (amTime < endTime)
+            {
+                switch (check)
+                {
+                    case 1:
+                        while (changes < degreeShifts)
+                        {
+                            yield return new WaitForSeconds(timeInterval);
+                            Instantiate(bullets, (GetComponent<Transform>().position), (Quaternion.Euler(xRotation, yRotation, zRotation)));
 
+                            zRotation = zRotation + changeInAngle;
+                            changes = changes + 1;
+                        }
+                        check = 2;
 
+                        break;
+
+                    case 2:
+                        while (changes > 0)
+                        {
+                            yield return new WaitForSeconds(timeInterval);
+                            Instantiate(bullets, (GetComponent<Transform>().position), (Quaternion.Euler(xRotation, yRotation, zRotation)));
+
+                            zRotation = zRotation - changeInAngle;
+                            changes = changes - 1;
+                        }
+                        check = 1;
+
+                        break;
+
+                    default:
+
+                        break;
+
+                }
+            }
+        }
     }
 
-
-
-
-
+    
     IEnumerator rotCircle1()
     {
         yield return new WaitForSeconds(timeDelay);
@@ -127,22 +164,41 @@ public class BulletWaveSpawnCentered : MonoBehaviour
 
         float newZrotation = zRotation;
 
-        while (amTime <= endTime)
-        {
-            yield return new WaitForSeconds(timeInterval);
-
-            //Instantiate(box, (spawner.transform.position), Quaternion.Euler(xRotation, yRotation, newZrotation));
-
-            newZrotation = zRotation + circleAngle;
-
-            for (int i = 0; i < circleSpokes; i++)
+        if (repeatUntilDeath) {
+            while (true)
             {
-                Instantiate(box, (spawner.transform.position), (Quaternion.Euler(xRotation, yRotation, newZrotation)));
+                yield return new WaitForSeconds(timeInterval);
 
-                newZrotation = newZrotation + circleAngle;
+                newZrotation = zRotation + circleAngle;
+
+                for (int i = 0; i < circleSpokes; i++)
+                {
+                    Instantiate(bullets, (GetComponent<Transform>().position), (Quaternion.Euler(xRotation, yRotation, newZrotation)));
+
+                    newZrotation = newZrotation + circleAngle;
+                }
+
+                zRotation = zRotation + changeInAngle;
             }
+        }
 
-            zRotation = zRotation + changeInAngle;
+        if (repeatTimeLimited)
+        {
+            while (amTime <= endTime)
+            {
+                yield return new WaitForSeconds(timeInterval);
+
+                newZrotation = zRotation + circleAngle;
+
+                for (int i = 0; i < circleSpokes; i++)
+                {
+                    Instantiate(bullets, (GetComponent<Transform>().position), (Quaternion.Euler(xRotation, yRotation, newZrotation)));
+
+                    newZrotation = newZrotation + circleAngle;
+                }
+
+                zRotation = zRotation + changeInAngle;
+            }
         }
 
 
@@ -156,24 +212,44 @@ public class BulletWaveSpawnCentered : MonoBehaviour
         yield return new WaitForSeconds(timeDelay);
         float circleAngle = 360 / circleSpokes;
         Quaternion angle = Quaternion.Euler(xRotation, yRotation, zRotation);
-        
 
-        while (amTime <= endTime)
-        {
-            yield return new WaitForSeconds(timeInterval);
 
-            Instantiate(box, (spawner.transform.position), angle);
-
-            float newZrotation = zRotation + circleAngle;
-
-            for (int i = 1; i < circleSpokes; i++)
+        if (repeatUntilDeath) {
+            while (true)
             {
-                Instantiate(box, (spawner.transform.position), (Quaternion.Euler(xRotation, yRotation, newZrotation)));
+                yield return new WaitForSeconds(timeInterval);
 
-                newZrotation = newZrotation + circleAngle;
+                Instantiate(bullets, (GetComponent<Transform>().position), angle);
+
+                float newZrotation = zRotation + circleAngle;
+
+                for (int i = 1; i < circleSpokes; i++)
+                {
+                    Instantiate(bullets, (GetComponent<Transform>().position), (Quaternion.Euler(xRotation, yRotation, newZrotation)));
+
+                    newZrotation = newZrotation + circleAngle;
+                }
             }
+        }
 
 
+        if (repeatTimeLimited)
+        {
+            while (amTime <= endTime)
+            {
+                yield return new WaitForSeconds(timeInterval);
+
+                Instantiate(bullets, (GetComponent<Transform>().position), angle);
+
+                float newZrotation = zRotation + circleAngle;
+
+                for (int i = 1; i < circleSpokes; i++)
+                {
+                    Instantiate(bullets, (GetComponent<Transform>().position), (Quaternion.Euler(xRotation, yRotation, newZrotation)));
+
+                    newZrotation = newZrotation + circleAngle;
+                }
+            }
         }
 
     }
@@ -183,15 +259,22 @@ public class BulletWaveSpawnCentered : MonoBehaviour
     {
         yield return new WaitForSeconds(timeDelay);
         Quaternion angle = Quaternion.Euler(xRotation, yRotation, zRotation);
-        
 
-        while (amTime <= endTime)
+        if (repeatUntilDeath) {
+            while (true)
+            {
+                yield return new WaitForSeconds(timeInterval);
+                Instantiate(bullets, (GetComponent<Transform>().position), angle);
+            }
+        }
+
+        if (repeatTimeLimited)
         {
-            yield return new WaitForSeconds(timeInterval);
-
-
-            Instantiate(box, (spawner.transform.position), angle);
-
+            while (amTime <= endTime)
+            {
+                yield return new WaitForSeconds(timeInterval);
+                Instantiate(bullets, (GetComponent<Transform>().position), angle);
+            }
         }
 
     }
@@ -204,17 +287,31 @@ public class BulletWaveSpawnCentered : MonoBehaviour
         Quaternion angle = Quaternion.Euler(xRotation, yRotation, zRotation);
         float angleC = changeInAngle;
 
+        if (repeatUntilDeath) {
+            while (true)
+            {
+                yield return new WaitForSeconds(timeInterval);
 
-        while (amTime <= endTime)
+                Instantiate(bullets, (GetComponent<Transform>().position), angle);
+
+                angle = Quaternion.Euler(xRotation, yRotation, (zRotation + angleC));
+
+                angleC = angleC + changeInAngle;
+            }
+        }
+
+        if (repeatTimeLimited)
         {
-            yield return new WaitForSeconds(timeInterval);
+            while (amTime <= endTime)
+            {
+                yield return new WaitForSeconds(timeInterval);
 
-            Instantiate(box, (spawner.transform.position), angle);
+                Instantiate(bullets, (GetComponent<Transform>().position), angle);
 
-            angle = Quaternion.Euler(xRotation, yRotation, (zRotation + angleC));
+                angle = Quaternion.Euler(xRotation, yRotation, (zRotation + angleC));
 
-            angleC = angleC + changeInAngle;
-
+                angleC = angleC + changeInAngle;
+            }
         }
 
 
@@ -229,7 +326,7 @@ public class BulletWaveSpawnCentered : MonoBehaviour
         Quaternion angle = Quaternion.Euler(xRotation, yRotation, zRotation); // creating angle variable for object
         
 
-        Instantiate(box, spawner.transform.position, angle);
+        Instantiate(bullets, GetComponent<Transform>().position, angle);
 
     }
 
