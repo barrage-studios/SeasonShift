@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,19 +11,16 @@ public class playerManager : MonoBehaviour
     public float invTime2;  // this has to be greater than the first invTime
     public float firstSpeed = 5;
     public float secondSpeed = 3;
-    public int playerLayer;
     public int enemyBulletLayer;
-    public int playerBulletLayer;
     public float shootingInterval;
     public float blinkInterval;
 
     public GameObject playerBulletPrefab;
-    public GameObject playerPrefab;
     public GameObject initialspawnPos; // the location the player will spawn after death(if it still has enough lives left)
-    public static bool isKillable;
 
-    private float amTime = 0;
-    private float speed;
+    public static bool isKillable; // do not modify in the editor!
+
+    private float amTime = 0; // variable to track the time after the game object spawns
     private bool check = true;   // This check and the one below are used in the player shooting coroutine, to make sure that it doesn't continue on forever
     private bool check2 = false;
     private bool playerMovementActive = true;
@@ -38,7 +35,7 @@ public class playerManager : MonoBehaviour
         {
             Quaternion angle = Quaternion.Euler(0, 0, 90);
 
-            Instantiate(playerBulletPrefab, (playerPrefab.transform.position), angle);
+            Instantiate(playerBulletPrefab, (GetComponent<Transform>().position), angle);
 
             yield return new WaitForSeconds(shootingInterval);
         }
@@ -53,14 +50,14 @@ public class playerManager : MonoBehaviour
         while (amTime < strTime + invTime2) // this will run until the amount of time that has passed is greater than the start time and the second invulnerable time
         {
 
-            playerPrefab.GetComponent<SpriteRenderer>().enabled = !(playerPrefab.GetComponent<SpriteRenderer>().enabled); // this is what is finding the sprite renderer and turning it the opposite of whatever it is currently
+            GetComponent<SpriteRenderer>().enabled = !(GetComponent<SpriteRenderer>().enabled); // this is what is finding the sprite renderer and turning it the opposite of whatever it is currently
 
             yield return new WaitForSeconds(blinkInterval);
 
         }
 
 
-        playerPrefab.GetComponent<SpriteRenderer>().enabled = true; // the coroutine ends with the sprite renderer on
+        GetComponent<SpriteRenderer>().enabled = true; // the coroutine ends with the sprite renderer on
         yield return new WaitForSeconds(0);
     }
 
@@ -110,7 +107,7 @@ public class playerManager : MonoBehaviour
 
     public void Start()
     {
-        Physics2D.IgnoreLayerCollision(playerLayer, playerBulletLayer);
+        Physics2D.IgnoreLayerCollision(this.gameObject.layer, playerBulletPrefab.gameObject.layer);
         StartCoroutine("playerMove"); // this and the next coroutine are utilized when the player spawns
         StartCoroutine("playerBlink");
     }
@@ -155,17 +152,15 @@ public class playerManager : MonoBehaviour
         {
             if (Input.GetButton("Fire3")) // detecting if the left shift button is being pressed down and will change the player's speed if it is
             {
-                speed = secondSpeed;
                 Vector3 tempVect = new Vector3(h, v, 0);
-                tempVect = tempVect.normalized * speed * Time.fixedDeltaTime;
-                playerPrefab.transform.position += tempVect;
+                tempVect = tempVect.normalized * secondSpeed * Time.fixedDeltaTime;
+                GetComponent<Transform>().position += tempVect;
             }
             else // this is the general speed of the player
             {
-                speed = firstSpeed;
                 Vector3 tempVect = new Vector3(h, v, 0);
-                tempVect = tempVect.normalized * speed * Time.fixedDeltaTime;
-                playerPrefab.transform.position += tempVect;
+                tempVect = tempVect.normalized * firstSpeed * Time.fixedDeltaTime;
+                GetComponent<Transform>().position += tempVect;
             }
         }
 
