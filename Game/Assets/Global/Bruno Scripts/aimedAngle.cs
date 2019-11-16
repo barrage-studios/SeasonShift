@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +6,6 @@ public class aimedAngle : MonoBehaviour
 {
 
     public GameObject bullet;   ///what is going to be fired
-    public GameObject spawner;  ///where it is going to spawn from
     public GameObject player;  ///the actual player
 
     public float timeDelay;  /// amount of time before the bullets begin to appear
@@ -31,12 +30,12 @@ public class aimedAngle : MonoBehaviour
         Vector3 playerVec = player.transform.position;
 
 
-        Vector3 spawnVec = spawner.transform.position;
+        Vector3 spawnVec = GetComponent<Transform>().position;
 
         float playerX = player.transform.position.x;
         float playerY = player.transform.position.y;
-        float spawnerX = spawner.transform.position.x;
-        float spawnerY = spawner.transform.position.y;
+        float spawnerX = GetComponent<Transform>().transform.position.x;
+        float spawnerY = GetComponent<Transform>().transform.position.y;
 
         // Math.Atan2(target.y - me.y, target.x - me.x) * (180/Math.PI)
         float degree = Mathf.Atan2(playerY - spawnerY, playerX - spawnerX) * (180 / Mathf.PI);
@@ -56,7 +55,7 @@ public class aimedAngle : MonoBehaviour
             yield return new WaitForSeconds(timeInterval);
 
 
-            Instantiate(bullet, (spawner.transform.position), angle); /// the actual spawning functions
+            Instantiate(bullet, (GetComponent<Transform>().position), angle); /// the actual spawning functions
 
         }
 
@@ -68,11 +67,7 @@ public class aimedAngle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         spawnVec = Vector3.zero;
-        
-
-
         StartCoroutine("repBullets");
     }
 
