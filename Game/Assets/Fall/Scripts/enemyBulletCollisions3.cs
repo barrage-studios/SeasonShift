@@ -28,7 +28,7 @@ public class enemyBulletCollisions3 : MonoBehaviour {
 
             Destroy(col.gameObject);
 
-            initializeScoreCounter.lev1ScoreCounter = initializeScoreCounter.lev1ScoreCounter + pointsPerHit;
+            UICounterStatic.UIScript.updateScore(pointsPerHit);
 
             if (life <= 0)
             {

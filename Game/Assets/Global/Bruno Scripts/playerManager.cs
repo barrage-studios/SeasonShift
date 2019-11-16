@@ -67,8 +67,6 @@ public class playerManager : MonoBehaviour
 
         if (isKillable)
         {
-            playerLives.deathDetect = playerLives.deathDetect + 1;
-
             Destroy(this.gameObject);
         }
     }
