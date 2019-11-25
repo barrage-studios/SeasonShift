@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7664702486398331350}
   - component: {fileID: 2715531357326681310}
   - component: {fileID: 5823585024381143468}
-  - component: {fileID: 3590024350823385575}
+  - component: {fileID: 4631823765687483823}
   - component: {fileID: 4645735093897460081}
   m_Layer: 12
   m_Name: Pansy
@@ -139,7 +139,7 @@ MonoBehaviour:
   timeDelay: 1.5
   timeInterval: 0.1
   endTime: 30
---- !u!114 &3590024350823385575
+--- !u!114 &4631823765687483823
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2621343212755290216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaec68764cfa924459bd5306878c5335, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f8594f18a3254446ba689d3c6da52f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerBulletLayer: 10

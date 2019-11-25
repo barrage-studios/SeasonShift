@@ -30,7 +30,7 @@ public class enemyBulletCollision : MonoBehaviour {
 
             Destroy(col.gameObject);
             
-            UICounter.updateScore(pointsPerHit);
+            //UICounter.updateScore(pointsPerHit);
 
             if (life <= 0)
             {
