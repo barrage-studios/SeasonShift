@@ -19,6 +19,7 @@ public class enemyBulletCollision : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col)
     {
 
+		
 
         Debug.Log("OnCollisionEnter2D");
 
@@ -29,7 +30,7 @@ public class enemyBulletCollision : MonoBehaviour {
 
             Destroy(col.gameObject);
             
-            initializeScoreCounter.lev1ScoreCounter = initializeScoreCounter.lev1ScoreCounter + pointsPerHit;
+            UICounter.updateScore(pointsPerHit);
 
             if (life <= 0)
             {
