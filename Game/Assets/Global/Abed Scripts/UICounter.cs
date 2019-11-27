@@ -10,28 +10,37 @@ public class UICounter : MonoBehaviour
     public Text lifeText;
     public Text grazeText;
     public Text bombText;
+    public int life;
     public int pointsLifeReward; // Gain an extra life for every X amount of points earned
     public GameObject initialspawnPos;
     public GameObject playerPrefab;
 
     private int score;
-    private int life;
     private int graze;
     private int bomb;
-    private bool check;
+    private int counter = 0;
+    private bool check = true;
 
     private void Start()
     {
-        bool check = true;
+        counter = 0;
+        check = true;
         score = 0;
-        life = 5;
         graze = 0;
         bomb = 2;
         scoreText.text = "" + score;
-        lifeText.text = "" + life;
+        lifeText.text = life.ToString();
         grazeText.text = "" + graze;
         bombText.text = "" + bomb;
-        UICounterStatic.UIScript = this;
+        //UICounterStatic.UIScript = this;
+    }
+
+    private void Awaken(){
+        counter = 0;
+    }
+
+    void OnApplicationQuit(){
+        counter = 0;
     }
 
     public void updateScore(int value)
@@ -46,23 +55,29 @@ public class UICounter : MonoBehaviour
 
     public void updateLife(int am)
     {
+        Debug.Log("CountCheck: " + check);
         if(check){
-            life = 5;
+            counter = 0;
             check = false;
         }
-
-        Debug.Log(life);
-        life += am;
+        life = 5;
+        Debug.Log("Life: " + life);
+        Debug.Log("AM: "+ am);
+        Debug.Log("Count: "+ counter);
+        counter = counter + am;
         lifeText.text = life.ToString();
         if (life <= 0)
             StartCoroutine("gameOver");
         else
         {
-            Vector3 pos = new Vector3(initialspawnPos.GetComponent<Transform>().position.x, initialspawnPos.GetComponent<Transform>().position.y, -10f);
+            float xpos = initialspawnPos.GetComponent<Transform>().position.x;
+            float ypos = initialspawnPos.GetComponent<Transform>().position.y;
+
+            Vector3 pos = new Vector3( xpos, ypos, -10f);
             Quaternion angle = Quaternion.Euler(0f, 0f, 0f);
             Instantiate(playerPrefab, pos, angle);
         }
-
+        am = 0;
     }
 
     public void updateGraze(int value)
@@ -99,7 +114,7 @@ public class UICounter : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
 
-        SceneManager.LoadScene("Death");
+        SceneManager.LoadScene("LevelSelect");
 
     }
 }

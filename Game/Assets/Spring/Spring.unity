@@ -888,6 +888,21 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 138051163}
+    - target: {fileID: 9123702343668605250, guid: 81fefca407c802d4e8c2c544ebaff062,
+        type: 3}
+      propertyPath: pointsLifeReward
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 9123702343668605250, guid: 81fefca407c802d4e8c2c544ebaff062,
+        type: 3}
+      propertyPath: initialspawnPos
+      value: 
+      objectReference: {fileID: 977763327}
+    - target: {fileID: 9123702343668605250, guid: 81fefca407c802d4e8c2c544ebaff062,
+        type: 3}
+      propertyPath: life
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81fefca407c802d4e8c2c544ebaff062, type: 3}
 --- !u!1 &638856854
@@ -1416,6 +1431,12 @@ Transform:
   m_Father: {fileID: 97027990}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &977763327 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3950005681442700936, guid: 7ad62ecaee632704b8f9b13971003652,
+    type: 3}
+  m_PrefabInstance: {fileID: 1398882353}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1094663621
 GameObject:
   m_ObjectHideFlags: 0
@@ -3049,6 +3070,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3568753112237689566, guid: 7489aa24e79ace045b0285689e00c3be,
+        type: 3}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7489aa24e79ace045b0285689e00c3be, type: 3}

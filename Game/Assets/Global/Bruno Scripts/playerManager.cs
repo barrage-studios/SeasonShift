@@ -65,13 +65,12 @@ public class playerManager : MonoBehaviour
 
     IEnumerator death()
     {
-        yield return new WaitForSeconds(0f);
-
         if (isKillable)
         {
             levelManager.GetComponent<UICounter>().updateLife(-1);
             Destroy(this.gameObject);
         }
+        yield return new WaitForSeconds(0f);
     }
 
 
@@ -118,8 +117,7 @@ public class playerManager : MonoBehaviour
 
         if (col.gameObject.layer == enemyBulletLayer)
         {
-            Debug.Log("Y");
-
+            
             Destroy(col.gameObject);
 
             StartCoroutine("death");
