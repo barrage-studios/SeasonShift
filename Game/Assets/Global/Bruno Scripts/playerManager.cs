@@ -67,7 +67,7 @@ public class playerManager : MonoBehaviour
     {
         if (isKillable)
         {
-            levelManager.GetComponent<UICounter>().updateLife(-1);
+            playerLives.deathDetect = 1;
             Destroy(this.gameObject);
         }
         yield return new WaitForSeconds(0f);

@@ -29,7 +29,7 @@ public class UICounter : MonoBehaviour
         graze = 0;
         bomb = 2;
         scoreText.text = "" + score;
-        lifeText.text = life.ToString();
+        lifeText.text = "" + life;
         grazeText.text = "" + graze;
         bombText.text = "" + bomb;
         //UICounterStatic.UIScript = this;
@@ -53,6 +53,10 @@ public class UICounter : MonoBehaviour
         }
     }
 
+    public void startLife(){
+        life = 5;
+    }
+
     public void updateLife(int am)
     {
         Debug.Log("CountCheck: " + check);
@@ -60,12 +64,12 @@ public class UICounter : MonoBehaviour
             counter = 0;
             check = false;
         }
-        life = 5;
+        counter = counter + am;
+        life = life + counter;
         Debug.Log("Life: " + life);
         Debug.Log("AM: "+ am);
         Debug.Log("Count: "+ counter);
-        counter = counter + am;
-        lifeText.text = life.ToString();
+        lifeText.text = "" + life;
         if (life <= 0)
             StartCoroutine("gameOver");
         else
@@ -77,6 +81,7 @@ public class UICounter : MonoBehaviour
             Quaternion angle = Quaternion.Euler(0f, 0f, 0f);
             Instantiate(playerPrefab, pos, angle);
         }
+        check = true;
         am = 0;
     }
 

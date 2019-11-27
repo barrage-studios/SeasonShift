@@ -97,13 +97,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnSpeed: 1
   invTime1: 3
-  invTime2: 3
+  invTime2: 6
   firstSpeed: 5
   secondSpeed: 3
   enemyBulletLayer: 11
   shootingInterval: 0.05
   blinkInterval: 0.2
-  levelManager: {fileID: 1513216371813570865, guid: 81fefca407c802d4e8c2c544ebaff062,
+  levelManager: {fileID: 3960579755366954736, guid: 81fefca407c802d4e8c2c544ebaff062,
     type: 3}
   playerBulletPrefab: {fileID: 2181238190652251617, guid: f6a4466ade430054388aa3ccf5a86bfa,
     type: 3}
