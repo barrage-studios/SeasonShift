@@ -48,6 +48,8 @@ MonoBehaviour:
   playerPrefab: {fileID: 8390944358912114091, guid: 89844e03d0c654142b56d20866317a62,
     type: 3}
   lives: 3
+  pointCounter: {fileID: 6273821881554915470, guid: 3f3b751d43753bf49af428513b499fb5,
+    type: 3}
   lifeCounter: {fileID: 3568753112237689566, guid: 7489aa24e79ace045b0285689e00c3be,
     type: 3}
   startAm: 3

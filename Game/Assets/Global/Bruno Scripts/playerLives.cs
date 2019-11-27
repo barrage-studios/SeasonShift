@@ -9,6 +9,8 @@ public class playerLives : MonoBehaviour {
     public GameObject initialspawnPos;
     public GameObject playerPrefab;
     public int lives;
+    public static int points = 0;
+    public Text pointCounter;
     public Text lifeCounter;
 
     public static int deathDetect = 0;
@@ -54,7 +56,7 @@ public class playerLives : MonoBehaviour {
 
 
 
-
+        pointCounter.GetComponent<UnityEngine.UI.Text>().text = points.ToString();
         lifeCounter.GetComponent<UnityEngine.UI.Text>().text = lives.ToString();
 
     }
