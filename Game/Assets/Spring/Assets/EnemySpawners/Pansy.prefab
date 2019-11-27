@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBulletLayer: 10
-  life: 20
+  life: 10
   enemy: {fileID: 2621343212755290216}
   pointsPerHit: 10
 --- !u!114 &4645735093897460081
