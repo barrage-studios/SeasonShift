@@ -735,6 +735,26 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3960579754822671152}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &563031489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563031488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a4040a8f26d983469c0fa6554828055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxX: 6
+  minX: -13.7
+  maxY: 8.8
+  minY: -5
+  startTime: 0
+  timeInterval: 5
+  endTime: 30
+  spawned: {fileID: 5932154021769514725, guid: 913a4061cf10c044aa8e06d6894dba8c, type: 3}
 --- !u!1 &621936650
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,9 +2144,9 @@ MonoBehaviour:
   repBulCircle: 0
   rotCircle: 0
   coneShooting: 0
-  timeDelay: 0
+  timeDelay: 50
   repeatTimeLimited: 1
-  endTime: 30
+  endTime: 80
   bullets: {fileID: 1250305772115096055, guid: 96bd6ec64397851459576169eee429e3, type: 3}
   zRotation: 270
   timeInterval: 3
@@ -3088,12 +3108,12 @@ PrefabInstance:
     - target: {fileID: 3960579755366954738, guid: 81fefca407c802d4e8c2c544ebaff062,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.4344077
+      value: -13.8
       objectReference: {fileID: 0}
     - target: {fileID: 3960579755366954738, guid: 81fefca407c802d4e8c2c544ebaff062,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6733765
+      value: -5.2
       objectReference: {fileID: 0}
     - target: {fileID: 3960579755366954738, guid: 81fefca407c802d4e8c2c544ebaff062,
         type: 3}
