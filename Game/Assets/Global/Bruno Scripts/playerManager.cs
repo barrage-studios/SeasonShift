@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class playerManager : MonoBehaviour
 {
     public float spawnSpeed;
@@ -15,6 +16,7 @@ public class playerManager : MonoBehaviour
     public float shootingInterval;
     public float blinkInterval;
 
+    public GameObject levelManager;
     public GameObject playerBulletPrefab;
     public GameObject initialspawnPos; // the location the player will spawn after death(if it still has enough lives left)
 
@@ -67,6 +69,7 @@ public class playerManager : MonoBehaviour
 
         if (isKillable)
         {
+            levelManager.GetComponent<UICounter>().updateLife(-1);
             Destroy(this.gameObject);
         }
     }

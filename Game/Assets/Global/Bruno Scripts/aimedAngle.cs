@@ -37,14 +37,13 @@ public class aimedAngle : MonoBehaviour
         float spawnerX = GetComponent<Transform>().transform.position.x;
         float spawnerY = GetComponent<Transform>().transform.position.y;
 
+        Debug.Log("x: " + playerX);
+
         // Math.Atan2(target.y - me.y, target.x - me.x) * (180/Math.PI)
         float degree = Mathf.Atan2(playerY - spawnerY, playerX - spawnerX) * (180 / Mathf.PI);
 
         Debug.Log(degree);
         
-
-        
-
 
         Quaternion angle = Quaternion.Euler(xRotation, yRotation, degree);  //angle is found before the spawning so it is set once
 
@@ -54,19 +53,16 @@ public class aimedAngle : MonoBehaviour
         {
             yield return new WaitForSeconds(timeInterval);
 
-
             Instantiate(bullet, (GetComponent<Transform>().position), angle); /// the actual spawning functions
 
         }
-
-
-
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
+        
         spawnVec = Vector3.zero;
         StartCoroutine("repBullets");
     }

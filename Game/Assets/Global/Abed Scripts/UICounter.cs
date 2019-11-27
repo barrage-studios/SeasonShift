@@ -18,11 +18,13 @@ public class UICounter : MonoBehaviour
     private int life;
     private int graze;
     private int bomb;
+    private bool check;
 
     private void Start()
     {
+        bool check = true;
         score = 0;
-        life = 3;
+        life = 5;
         graze = 0;
         bomb = 2;
         scoreText.text = "" + score;
@@ -42,15 +44,21 @@ public class UICounter : MonoBehaviour
         }
     }
 
-    public void updateLife(int value)
+    public void updateLife(int am)
     {
-        life += value;
-        lifeText.text = "" + life;
+        if(check){
+            life = 5;
+            check = false;
+        }
+
+        Debug.Log(life);
+        life += am;
+        lifeText.text = life.ToString();
         if (life <= 0)
             StartCoroutine("gameOver");
         else
         {
-            Vector3 pos = new Vector3(-5.41f, -8.69f, 0f);
+            Vector3 pos = new Vector3(initialspawnPos.GetComponent<Transform>().position.x, initialspawnPos.GetComponent<Transform>().position.y, -10f);
             Quaternion angle = Quaternion.Euler(0f, 0f, 0f);
             Instantiate(playerPrefab, pos, angle);
         }

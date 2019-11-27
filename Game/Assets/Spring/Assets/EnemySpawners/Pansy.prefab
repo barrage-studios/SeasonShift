@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 7585127217908639244}
   - component: {fileID: 7664702486398331350}
   - component: {fileID: 2715531357326681310}
-  - component: {fileID: 5823585024381143468}
+  - component: {fileID: -472243420502584814}
+  - component: {fileID: 256782314154868085}
   - component: {fileID: 4631823765687483823}
   - component: {fileID: 4645735093897460081}
   m_Layer: 12
@@ -122,7 +123,35 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &5823585024381143468
+--- !u!114 &-472243420502584814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2621343212755290216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f33046464dc6264aa2de74186a8b07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repeatUntilDeath: 1
+  repBulTimeCAngle: 0
+  repBulTime: 0
+  repBulCircle: 0
+  rotCircle: 0
+  coneShooting: 1
+  timeDelay: 7
+  repeatTimeLimited: 0
+  endTime: 0
+  bullets: {fileID: 8356103588638205337, guid: d1eb87993f7362f4d801b9e1a4f5adad, type: 3}
+  zRotation: 0
+  timeInterval: 1
+  changeInAngle: 6
+  circleSpokes: 0
+  startDegree: 260
+  endDegree: 280
+--- !u!114 &256782314154868085
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,9 +165,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8356103588638205337, guid: d1eb87993f7362f4d801b9e1a4f5adad, type: 3}
   player: {fileID: 8390944358912114091, guid: 89844e03d0c654142b56d20866317a62, type: 3}
-  timeDelay: 1.5
-  timeInterval: 0.1
-  endTime: 30
+  timeDelay: 7
+  timeInterval: 1
+  endTime: 60
 --- !u!114 &4631823765687483823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +200,7 @@ MonoBehaviour:
   Yvelocity: 0
   Xvelocity: 2
   changeMovementOnce: 1
-  timeChange: 4
+  timeChange: 8
   SecYvelocity: 0
   SecXvelocity: 0
   changeMoveTwice: 0
