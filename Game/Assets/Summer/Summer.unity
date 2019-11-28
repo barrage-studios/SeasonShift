@@ -384,6 +384,7 @@ GameObject:
   m_Component:
   - component: {fileID: 86180985}
   - component: {fileID: 86180986}
+  - component: {fileID: 86180987}
   m_Layer: 0
   m_Name: RandomTopSpawner
   m_TagString: Untagged
@@ -399,7 +400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86180984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.44, y: 8.62, z: 3.0361128}
+  m_LocalPosition: {x: 0.73, y: 9.46, z: 3.0361128}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 839537186}
@@ -417,11 +418,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e1f053e0f4d9c04ca03722852e39bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxX: 9.5
+  maxX: 9
   minX: -9
   maxY: 10
   minY: 8
   moveSpeed: 5
+--- !u!114 &86180987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86180984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f33046464dc6264aa2de74186a8b07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repeatUntilDeath: 0
+  repBulTimeCAngle: 0
+  repBulTime: 1
+  repBulCircle: 0
+  rotCircle: 0
+  coneShooting: 0
+  timeDelay: 0
+  repeatTimeLimited: 1
+  endTime: 60
+  bullets: {fileID: 3236056453523874952, guid: 811011a9aab85874bbc4ec3b6c672ea6, type: 3}
+  zRotation: 270
+  timeInterval: 5
+  changeInAngle: 0
+  circleSpokes: 0
+  startDegree: 0
+  endDegree: 0
 --- !u!1 &184747098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,6 +1072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 758941894}
   - component: {fileID: 758941893}
+  - component: {fileID: 758941898}
   - component: {fileID: 758941892}
   - component: {fileID: 758941891}
   - component: {fileID: 758941890}
@@ -1257,6 +1287,22 @@ MonoBehaviour:
   circleSpokes: 0
   startDegree: 0
   endDegree: 0
+--- !u!114 &758941898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758941889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f8594f18a3254446ba689d3c6da52f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBulletLayer: 10
+  life: 150
+  enemy: {fileID: 758941889}
+  pointsPerHit: 20
 --- !u!1001 &803874757
 PrefabInstance:
   m_ObjectHideFlags: 0
