@@ -170,7 +170,7 @@ PrefabInstance:
     - target: {fileID: 2665387593895568079, guid: 89844e03d0c654142b56d20866317a62,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2665387593895568079, guid: 89844e03d0c654142b56d20866317a62,
         type: 3}
@@ -2297,7 +2297,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786000095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -999}
+  m_LocalPosition: {x: 0, y: 0, z: -500}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2478,6 +2478,7 @@ GameObject:
   - component: {fileID: 1868474379}
   - component: {fileID: 1868474378}
   - component: {fileID: 1868474380}
+  - component: {fileID: 1868474381}
   m_Layer: 13
   m_Name: springBoss
   m_TagString: Untagged
@@ -2559,7 +2560,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868474374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.47, y: 4.43, z: -14.521583}
+  m_LocalPosition: {x: -3.47, y: 4.43, z: -9}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2618,6 +2619,34 @@ MonoBehaviour:
   life: 100
   enemy: {fileID: 1868474374}
   pointsPerHit: 10
+--- !u!114 &1868474381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868474374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f33046464dc6264aa2de74186a8b07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repeatUntilDeath: 1
+  repBulTimeCAngle: 0
+  repBulTime: 1
+  repBulCircle: 0
+  rotCircle: 0
+  coneShooting: 0
+  timeDelay: 3
+  repeatTimeLimited: 0
+  endTime: 0
+  bullets: {fileID: 5569759439309219688, guid: 63d934cd8dec6204e8155f3e1bdcce53, type: 3}
+  zRotation: 270
+  timeInterval: 2
+  changeInAngle: 0
+  circleSpokes: 0
+  startDegree: 0
+  endDegree: 0
 --- !u!1 &1920492779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2834,7 +2863,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034383676}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: 0, z: 10}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 1409502595}
@@ -3143,7 +3172,7 @@ PrefabInstance:
     - target: {fileID: 3960579755366954738, guid: 81fefca407c802d4e8c2c544ebaff062,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3960579755366954738, guid: 81fefca407c802d4e8c2c544ebaff062,
         type: 3}

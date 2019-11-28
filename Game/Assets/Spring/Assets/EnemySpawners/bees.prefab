@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 9083156324802133699}
   - component: {fileID: 7490335841032544436}
   - component: {fileID: 6323873358650341138}
+  - component: {fileID: 2099634406237708870}
+  - component: {fileID: -8037134474072722999}
   m_Layer: 0
   m_Name: bees
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5569759439309219688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.9330745, y: 2.930121, z: -38.734375}
+  m_LocalPosition: {x: -7.9330745, y: 2.930121, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,3 +121,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &2099634406237708870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5569759439309219688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f8594f18a3254446ba689d3c6da52f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBulletLayer: 10
+  life: 5
+  enemy: {fileID: 5569759439309219688}
+  pointsPerHit: 15
+--- !u!114 &-8037134474072722999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5569759439309219688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a93d67d9742e9b1488f0d0652156f9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8390944358912114091, guid: 89844e03d0c654142b56d20866317a62, type: 3}
+  moveSpeed: 1

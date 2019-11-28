@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1722550082869303184}
   - component: {fileID: -1363567610476532213}
   - component: {fileID: 8383156275700720840}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: enemyBulletCyclone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
