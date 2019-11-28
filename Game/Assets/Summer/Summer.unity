@@ -844,6 +844,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 597010462}
+  - component: {fileID: 597010464}
+  - component: {fileID: 597010463}
   m_Layer: 0
   m_Name: MidLeft
   m_TagString: Untagged
@@ -865,6 +867,62 @@ Transform:
   m_Father: {fileID: 839537186}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &597010463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597010461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f33046464dc6264aa2de74186a8b07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repeatUntilDeath: 0
+  repBulTimeCAngle: 0
+  repBulTime: 0
+  repBulCircle: 0
+  rotCircle: 0
+  coneShooting: 1
+  timeDelay: 0
+  repeatTimeLimited: 1
+  endTime: 30
+  bullets: {fileID: 3986225738673367274, guid: dd88bf395670a31478fc94aa8e768ce5, type: 3}
+  zRotation: 0
+  timeInterval: 5
+  changeInAngle: 10
+  circleSpokes: 0
+  startDegree: 130
+  endDegree: 250
+--- !u!114 &597010464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597010461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f33046464dc6264aa2de74186a8b07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repeatUntilDeath: 0
+  repBulTimeCAngle: 0
+  repBulTime: 0
+  repBulCircle: 0
+  rotCircle: 0
+  coneShooting: 1
+  timeDelay: 0
+  repeatTimeLimited: 1
+  endTime: 30
+  bullets: {fileID: 3986225738673367274, guid: dd88bf395670a31478fc94aa8e768ce5, type: 3}
+  zRotation: 0
+  timeInterval: 5
+  changeInAngle: 10
+  circleSpokes: 0
+  startDegree: 120
+  endDegree: 240
 --- !u!1001 &662741321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2802,6 +2860,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1564778922}
+  - component: {fileID: 1564778924}
+  - component: {fileID: 1564778923}
   m_Layer: 0
   m_Name: MidRight
   m_TagString: Untagged
@@ -2823,6 +2883,62 @@ Transform:
   m_Father: {fileID: 839537186}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1564778923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564778921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f33046464dc6264aa2de74186a8b07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repeatUntilDeath: 0
+  repBulTimeCAngle: 0
+  repBulTime: 0
+  repBulCircle: 0
+  rotCircle: 0
+  coneShooting: 1
+  timeDelay: 0
+  repeatTimeLimited: 1
+  endTime: 30
+  bullets: {fileID: 3986225738673367274, guid: dd88bf395670a31478fc94aa8e768ce5, type: 3}
+  zRotation: 0
+  timeInterval: 5
+  changeInAngle: 10
+  circleSpokes: 0
+  startDegree: 310
+  endDegree: 430
+--- !u!114 &1564778924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564778921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f33046464dc6264aa2de74186a8b07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repeatUntilDeath: 0
+  repBulTimeCAngle: 0
+  repBulTime: 0
+  repBulCircle: 0
+  rotCircle: 0
+  coneShooting: 1
+  timeDelay: 0
+  repeatTimeLimited: 1
+  endTime: 30
+  bullets: {fileID: 3986225738673367274, guid: dd88bf395670a31478fc94aa8e768ce5, type: 3}
+  zRotation: 0
+  timeInterval: 5
+  changeInAngle: 10
+  circleSpokes: 0
+  startDegree: 300
+  endDegree: 420
 --- !u!1 &1884505795
 GameObject:
   m_ObjectHideFlags: 0

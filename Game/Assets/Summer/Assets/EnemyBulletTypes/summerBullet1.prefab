@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 7546077074104898711}
   Yvelocity: 0
-  Xvelocity: 5
+  Xvelocity: 4
   changeMovementOnce: 0
   timeChange: 0
   SecYvelocity: 0
