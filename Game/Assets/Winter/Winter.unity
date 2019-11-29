@@ -1051,6 +1051,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 528063876}
+  - component: {fileID: 528063877}
   m_Layer: 0
   m_Name: MidLeft
   m_TagString: Untagged
@@ -1072,6 +1073,34 @@ Transform:
   m_Father: {fileID: 592473026}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &528063877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528063875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f33046464dc6264aa2de74186a8b07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repeatUntilDeath: 0
+  repBulTimeCAngle: 0
+  repBulTime: 0
+  repBulCircle: 0
+  rotCircle: 0
+  coneShooting: 0
+  timeDelay: 10
+  repeatTimeLimited: 1
+  endTime: 90
+  bullets: {fileID: 8165262988939387167, guid: f91ca076b6addf843bce821fddacf7c0, type: 3}
+  zRotation: 0
+  timeInterval: 4
+  changeInAngle: 0
+  circleSpokes: 0
+  startDegree: 0
+  endDegree: 0
 --- !u!1001 &546835541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1911,6 +1940,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1278972561}
+  - component: {fileID: 1278972562}
   m_Layer: 0
   m_Name: MidRight
   m_TagString: Untagged
@@ -1932,6 +1962,34 @@ Transform:
   m_Father: {fileID: 592473026}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1278972562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278972560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f33046464dc6264aa2de74186a8b07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repeatUntilDeath: 0
+  repBulTimeCAngle: 0
+  repBulTime: 0
+  repBulCircle: 0
+  rotCircle: 0
+  coneShooting: 0
+  timeDelay: 10
+  repeatTimeLimited: 1
+  endTime: 90
+  bullets: {fileID: 5656246505403604120, guid: db90441d33cf7904db3234799bd5c8a7, type: 3}
+  zRotation: 0
+  timeInterval: 4
+  changeInAngle: 0
+  circleSpokes: 0
+  startDegree: 0
+  endDegree: 0
 --- !u!1 &1470965466
 GameObject:
   m_ObjectHideFlags: 0
