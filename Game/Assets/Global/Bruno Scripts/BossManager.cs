@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bossMovementRandom : MonoBehaviour {
+public class BossManager : MonoBehaviour {
 
+    // Movement Data
     public float maxX = 6.1f;
     public float minX = -6.1f;
     public float maxY = 4.2f;
@@ -14,6 +15,11 @@ public class bossMovementRandom : MonoBehaviour {
     private float randomX;
     private float randomY;
 
+    // Enemy Bullet Collision Data
+    public int playerBulletLayer;
+    public int life;
+    public GameObject enemy;
+    public int pointsPerHit;
 
     void Update()
     {
@@ -44,5 +50,33 @@ public class bossMovementRandom : MonoBehaviour {
 
         Mathf.Clamp( bossx, minX, maxX);
         Mathf.Clamp( bossy, minY, maxY);
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.layer == playerBulletLayer)
+        {
+            life = life - 1;
+
+            Destroy(col.gameObject);
+
+            playerLives.points = playerLives.points + pointsPerHit;
+
+            if (life <= 0)
+            {
+                StartCoroutine("death");
+            }
+        }
+    }
+
+    IEnumerator death()
+    {
+        yield return new WaitForSeconds(.05f);
+
+        if (this.gameObject.layer == 12)
+        {
+            checkBossDeath.boss1death = checkBossDeath.boss1death + 1;
+        }
+        Destroy(enemy.gameObject);
     }
 }
