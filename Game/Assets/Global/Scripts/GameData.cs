@@ -7,7 +7,6 @@ using UnityEngine;
 public class GameData : MonoBehaviour
 {
     public Profile playerProfile = null;
-    private float playTime = 0;
     private bool playing = false;
     public static GameData _instance; // Track instances of this class
     void Start()
@@ -85,9 +84,9 @@ public class GameData : MonoBehaviour
             Debug.Log("No save file found, creating new file");
             file = File.Create(destination);
         }
-        Debug.Log("Time elapsed in game is " + playTime.ToString());
+        Debug.Log("Time elapsed in game is " + playerProfile.getTime().ToString());
         BinaryFormatter bf = new BinaryFormatter();
-        bf.Serialize(file, new Profile(playerProfile.getName(), playTime));
+        bf.Serialize(file, playerProfile);
         file.Close();
     }
 }

@@ -43,7 +43,7 @@ public class Profile
     {
         return LevelsCleared;
     }
-    public void modLevelsCleared(int num){
-        LevelsCleared = num;
+    public void progressLevels(){
+        LevelsCleared++;
     }
 }
