@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class BossManager : MonoBehaviour {
 
@@ -21,7 +20,6 @@ public class BossManager : MonoBehaviour {
     public int playerBulletLayer;
     public int life;
     public GameObject levelManager;
-    public GameObject enemy;
     public int pointsPerHit;
 
     void Update()
@@ -75,10 +73,7 @@ public class BossManager : MonoBehaviour {
     IEnumerator death()
     {
         yield return new WaitForSeconds(.05f);
-
         GameData._instance.playerProfile.progressLevels();
-
-        
-        Destroy(enemy.gameObject);
+        SceneEngine.PopScene();
     }
 }

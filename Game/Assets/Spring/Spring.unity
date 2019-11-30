@@ -273,6 +273,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &108259148
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3917556453541796463, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_Name
+      value: GameData
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 742
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 117.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c6705cc7797574f4b95a810c39179bd6, type: 3}
 --- !u!1 &255393619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2688,7 +2757,6 @@ MonoBehaviour:
   playerBulletLayer: 0
   life: 0
   levelManager: {fileID: 0}
-  enemy: {fileID: 0}
   pointsPerHit: 0
 --- !u!114 &1685556600
 MonoBehaviour:
@@ -3189,7 +3257,6 @@ GameObject:
   - component: {fileID: 1868474375}
   - component: {fileID: 1868474379}
   - component: {fileID: 1868474378}
-  - component: {fileID: 1868474380}
   - component: {fileID: 1868474381}
   m_Layer: 13
   m_Name: springBoss
@@ -3215,11 +3282,10 @@ MonoBehaviour:
   maxY: 8.5
   minY: 1
   moveSpeed: 1
-  playerBulletLayer: 0
-  life: 0
-  levelManager: {fileID: 0}
-  enemy: {fileID: 0}
-  pointsPerHit: 0
+  playerBulletLayer: 10
+  life: 10
+  levelManager: {fileID: 563031488}
+  pointsPerHit: 10
 --- !u!212 &1868474376
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3320,22 +3386,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &1868474380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1868474374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8594f18a3254446ba689d3c6da52f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerBulletLayer: 10
-  life: 100
-  enemy: {fileID: 1868474374}
-  pointsPerHit: 10
 --- !u!114 &1868474381
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -915,7 +915,6 @@ MonoBehaviour:
   playerBulletLayer: 0
   life: 0
   levelManager: {fileID: 0}
-  enemy: {fileID: 0}
   pointsPerHit: 0
 --- !u!1 &293852183
 GameObject:
@@ -1171,6 +1170,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &485195779
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3917556453541796463, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_Name
+      value: GameData
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 742
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 117.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590747269631190073, guid: c6705cc7797574f4b95a810c39179bd6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c6705cc7797574f4b95a810c39179bd6, type: 3}
 --- !u!1 &528063875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,7 +2084,6 @@ MonoBehaviour:
   playerBulletLayer: 10
   life: 200
   levelManager: {fileID: 0}
-  enemy: {fileID: 949384313}
   pointsPerHit: 15
 --- !u!212 &949384315
 SpriteRenderer:
@@ -3803,6 +3870,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: playerPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7712509504997661883, guid: 89844e03d0c654142b56d20866317a62,
+        type: 3}
+      propertyPath: sfx
+      value: 
+      objectReference: {fileID: 210168396}
+    - target: {fileID: 7712509504997661883, guid: 89844e03d0c654142b56d20866317a62,
+        type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1257752387}
     - target: {fileID: 7712509504078019959, guid: 89844e03d0c654142b56d20866317a62,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3858,15 +3935,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7712509504997661883, guid: 89844e03d0c654142b56d20866317a62,
-        type: 3}
-      propertyPath: sfx
-      value: 
-      objectReference: {fileID: 210168396}
-    - target: {fileID: 7712509504997661883, guid: 89844e03d0c654142b56d20866317a62,
-        type: 3}
-      propertyPath: levelManager
-      value: 
-      objectReference: {fileID: 1257752387}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89844e03d0c654142b56d20866317a62, type: 3}
