@@ -18,7 +18,7 @@ public class BulletWaveSpawnCentered : MonoBehaviour
     public bool repeatTimeLimited = false;
     public float endTime = 0.0f;
 
-
+    public AudioSource sfx;
     public GameObject bullets;  //object you want spawned goes in here
     public float zRotation = 0.0f;  // Rotation counter clockwise 
     public float timeInterval = 0.0f;
@@ -86,6 +86,7 @@ public class BulletWaveSpawnCentered : MonoBehaviour
                         {
                             yield return new WaitForSeconds(timeInterval);
                             Instantiate(bullets, (GetComponent<Transform>().position), (Quaternion.Euler(xRotation, yRotation, zRotation)));
+                            sfx.Play(0);
 
                             zRotation = zRotation + changeInAngle;
                             changes = changes + 1;
@@ -99,6 +100,7 @@ public class BulletWaveSpawnCentered : MonoBehaviour
                         {
                             yield return new WaitForSeconds(timeInterval);
                             Instantiate(bullets, (GetComponent<Transform>().position), (Quaternion.Euler(xRotation, yRotation, zRotation)));
+                            sfx.Play(0);
 
                             zRotation = zRotation - changeInAngle;
                             changes = changes - 1;
@@ -126,6 +128,7 @@ public class BulletWaveSpawnCentered : MonoBehaviour
                         {
                             yield return new WaitForSeconds(timeInterval);
                             Instantiate(bullets, (GetComponent<Transform>().position), (Quaternion.Euler(xRotation, yRotation, zRotation)));
+                            sfx.Play(0);
 
                             zRotation = zRotation + changeInAngle;
                             changes = changes + 1;
@@ -139,6 +142,7 @@ public class BulletWaveSpawnCentered : MonoBehaviour
                         {
                             yield return new WaitForSeconds(timeInterval);
                             Instantiate(bullets, (GetComponent<Transform>().position), (Quaternion.Euler(xRotation, yRotation, zRotation)));
+                            sfx.Play(0);
 
                             zRotation = zRotation - changeInAngle;
                             changes = changes - 1;
@@ -174,6 +178,7 @@ public class BulletWaveSpawnCentered : MonoBehaviour
                 for (int i = 0; i < circleSpokes; i++)
                 {
                     Instantiate(bullets, (GetComponent<Transform>().position), (Quaternion.Euler(xRotation, yRotation, newZrotation)));
+                    sfx.Play(0);
 
                     newZrotation = newZrotation + circleAngle;
                 }
@@ -193,6 +198,7 @@ public class BulletWaveSpawnCentered : MonoBehaviour
                 for (int i = 0; i < circleSpokes; i++)
                 {
                     Instantiate(bullets, (GetComponent<Transform>().position), (Quaternion.Euler(xRotation, yRotation, newZrotation)));
+                    sfx.Play(0);
 
                     newZrotation = newZrotation + circleAngle;
                 }
@@ -220,12 +226,14 @@ public class BulletWaveSpawnCentered : MonoBehaviour
                 yield return new WaitForSeconds(timeInterval);
 
                 Instantiate(bullets, (GetComponent<Transform>().position), angle);
+                sfx.Play(0);
 
                 float newZrotation = zRotation + circleAngle;
 
                 for (int i = 1; i < circleSpokes; i++)
                 {
                     Instantiate(bullets, (GetComponent<Transform>().position), (Quaternion.Euler(xRotation, yRotation, newZrotation)));
+                    sfx.Play(0);
 
                     newZrotation = newZrotation + circleAngle;
                 }
@@ -240,12 +248,14 @@ public class BulletWaveSpawnCentered : MonoBehaviour
                 yield return new WaitForSeconds(timeInterval);
 
                 Instantiate(bullets, (GetComponent<Transform>().position), angle);
+                sfx.Play(0);
 
                 float newZrotation = zRotation + circleAngle;
 
                 for (int i = 1; i < circleSpokes; i++)
                 {
                     Instantiate(bullets, (GetComponent<Transform>().position), (Quaternion.Euler(xRotation, yRotation, newZrotation)));
+                    sfx.Play(0);
 
                     newZrotation = newZrotation + circleAngle;
                 }
@@ -265,6 +275,7 @@ public class BulletWaveSpawnCentered : MonoBehaviour
             {
                 yield return new WaitForSeconds(timeInterval);
                 Instantiate(bullets, (GetComponent<Transform>().position), angle);
+                sfx.Play(0);
             }
         }
 
@@ -274,6 +285,7 @@ public class BulletWaveSpawnCentered : MonoBehaviour
             {
                 yield return new WaitForSeconds(timeInterval);
                 Instantiate(bullets, (GetComponent<Transform>().position), angle);
+                sfx.Play(0);
             }
         }
 
@@ -293,6 +305,7 @@ public class BulletWaveSpawnCentered : MonoBehaviour
                 yield return new WaitForSeconds(timeInterval);
 
                 Instantiate(bullets, (GetComponent<Transform>().position), angle);
+                sfx.Play(0);
 
                 angle = Quaternion.Euler(xRotation, yRotation, (zRotation + angleC));
 
@@ -307,6 +320,7 @@ public class BulletWaveSpawnCentered : MonoBehaviour
                 yield return new WaitForSeconds(timeInterval);
 
                 Instantiate(bullets, (GetComponent<Transform>().position), angle);
+                sfx.Play(0);
 
                 angle = Quaternion.Euler(xRotation, yRotation, (zRotation + angleC));
 
@@ -327,6 +341,7 @@ public class BulletWaveSpawnCentered : MonoBehaviour
         
 
         Instantiate(bullets, GetComponent<Transform>().position, angle);
+        sfx.Play(0);
 
     }
 

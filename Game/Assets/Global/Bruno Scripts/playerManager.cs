@@ -16,6 +16,7 @@ public class playerManager : MonoBehaviour
     public float shootingInterval;
     public float blinkInterval;
 
+    public AudioSource sfx;
     public GameObject levelManager;
     public GameObject playerBulletPrefab;
     public GameObject initialspawnPos; // the location the player will spawn after death(if it still has enough lives left)
@@ -38,6 +39,7 @@ public class playerManager : MonoBehaviour
             Quaternion angle = Quaternion.Euler(0, 0, 90);
 
             Instantiate(playerBulletPrefab, (GetComponent<Transform>().position), angle);
+            sfx.Play(0);
 
             yield return new WaitForSeconds(shootingInterval);
         }
@@ -53,6 +55,7 @@ public class playerManager : MonoBehaviour
         {
 
             GetComponent<SpriteRenderer>().enabled = !(GetComponent<SpriteRenderer>().enabled); // this is what is finding the sprite renderer and turning it the opposite of whatever it is currently
+            
 
             yield return new WaitForSeconds(blinkInterval);
 
