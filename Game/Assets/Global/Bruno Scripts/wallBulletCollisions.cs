@@ -13,8 +13,6 @@ public class wallBulletCollisions : MonoBehaviour {
     {
 
 
-        Debug.Log("OnCollisionEnter2D");
-
         if ((col.gameObject.layer == playerBulletLayer) || (col.gameObject.layer == bulletLayer))
         {
             

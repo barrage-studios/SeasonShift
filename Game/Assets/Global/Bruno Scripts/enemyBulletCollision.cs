@@ -47,10 +47,6 @@ public class enemyBulletCollision : MonoBehaviour {
     {
         yield return new WaitForSeconds(.05f);
 
-        if (this.gameObject.layer == 12)
-        {
-            checkBossDeath.boss1death = checkBossDeath.boss1death + 1;
-        }
 
 
         Destroy(enemy.gameObject);

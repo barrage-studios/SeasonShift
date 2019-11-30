@@ -31,9 +31,7 @@ public class playerLives : MonoBehaviour {
 
     }
 
-    public void bossDeath(){
-        SceneManager.LoadScene("LevelSelect");
-    }
+   
 	
 	// Update is called once per frame
 	void Update () {
@@ -54,10 +52,7 @@ public class playerLives : MonoBehaviour {
             
         }
 
-        if(bossD > 0){
-            bossD = 0;
-            bossDeath();
-        }
+       
 
         if(lives <= 0 && deathDetect == 1){
             StartCoroutine("trueDeath");

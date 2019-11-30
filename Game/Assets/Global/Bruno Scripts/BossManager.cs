@@ -76,29 +76,9 @@ public class BossManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(.05f);
 
-        if(this.gameObject.tag == "boss1"){
-            GameData._instance.playerProfile.modLevelsCleared(1);
-        }
-        else if(this.gameObject.tag == "boss2"){
-            GameData._instance.playerProfile.modLevelsCleared(2);
-        }
-        else if(this.gameObject.tag == "boss3"){
-            GameData._instance.playerProfile.modLevelsCleared(3);
-        }
-        else if(this.gameObject.tag == "boss4"){
-            GameData._instance.playerProfile.modLevelsCleared(4);
-        }
+        GameData._instance.playerProfile.progressLevels();
+
         
-
-
-
-        if (this.gameObject.layer == 12)
-        {
-            checkBossDeath.boss1death = checkBossDeath.boss1death + 1;
-        }
-
-        SceneManager.LoadScene("LevelSelect");
-
         Destroy(enemy.gameObject);
     }
 }
