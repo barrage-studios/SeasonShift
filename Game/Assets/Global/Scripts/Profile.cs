@@ -43,7 +43,12 @@ public class Profile
     {
         return LevelsCleared;
     }
-    public void progressLevels(){
+    public void progressLevels()
+    {
         LevelsCleared++;
+    }
+    public void addPlaytime(float time)
+    {
+        playtime += time;
     }
 }

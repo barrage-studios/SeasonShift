@@ -27,17 +27,16 @@ public class GameData : MonoBehaviour
                 Debug.Log("Profile was null!");
                 playerProfile = new Profile("Player", 0.0f);
             }
-            playTime = playerProfile.getTime(); // Load in stored data
         }
     }
     private void FixedUpdate()
     {
         if (playing) // Only add time in Menu Scene
-            playTime += UnityEngine.Time.deltaTime;
+            playerProfile.addPlaytime(UnityEngine.Time.deltaTime);
     }
     public float getTime()
     {
-        return this.playTime;
+        return this.playerProfile.getTime();
     }
     public bool getPlaying()
     {
