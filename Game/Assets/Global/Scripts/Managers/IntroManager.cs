@@ -17,7 +17,7 @@ public class IntroManager : MonoBehaviour
         Color color = CompanySplash.color;
         if (!hitFullView)
         {
-            Debug.Log("Fading in! a[" + color.a.ToString() + "]");
+            //Debug.Log("Fading in! a[" + color.a.ToString() + "]");
             color.a += (1.5f / 255f);
             if (color.a > (252f / 255f))
             {
@@ -26,7 +26,7 @@ public class IntroManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Fading out! a[" + color.a.ToString() + "]");
+            //Debug.Log("Fading out! a[" + color.a.ToString() + "]");
             color.a -=  (1.5f / 255f);
             if (color.a < (4f / 255f))
             {
