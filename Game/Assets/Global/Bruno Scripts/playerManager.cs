@@ -17,6 +17,7 @@ public class playerManager : MonoBehaviour
     public float blinkInterval;
 
     public AudioSource sfx;
+    public GameObject topLayer;
     public GameObject levelManager;
     public GameObject playerBulletPrefab;
     public GameObject initialspawnPos; // the location the player will spawn after death(if it still has enough lives left)
@@ -71,6 +72,7 @@ public class playerManager : MonoBehaviour
         if (isKillable)
         {
             playerLives.deathDetect = 1;
+            Destroy(topLayer);
             Destroy(this.gameObject);
         }
         yield return new WaitForSeconds(0f);
@@ -155,11 +157,16 @@ public class playerManager : MonoBehaviour
             if (Input.GetButton("Fire3")) // detecting if the left shift button is being pressed down and will change the player's speed if it is
             {
                 Vector3 tempVect = new Vector3(h, v, 0);
+                topLayer.GetComponent<SpriteRenderer>().enabled = false;
+
                 tempVect = tempVect.normalized * secondSpeed * Time.fixedDeltaTime;
                 GetComponent<Transform>().position += tempVect;
             }
             else // this is the general speed of the player
             {
+                
+                topLayer.GetComponent<SpriteRenderer>().enabled = true;
+
                 Vector3 tempVect = new Vector3(h, v, 0);
                 tempVect = tempVect.normalized * firstSpeed * Time.fixedDeltaTime;
                 GetComponent<Transform>().position += tempVect;

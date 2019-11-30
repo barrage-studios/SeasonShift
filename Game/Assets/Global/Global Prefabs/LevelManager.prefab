@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialspawnPos: {fileID: 3950005681442700936, guid: 7ad62ecaee632704b8f9b13971003652,
     type: 3}
-  playerPrefab: {fileID: 8390944358912114091, guid: 89844e03d0c654142b56d20866317a62,
+  playerPrefab: {fileID: 7712509504997661884, guid: 89844e03d0c654142b56d20866317a62,
     type: 3}
   lives: 3
   pointCounter: {fileID: 6273821881554915470, guid: 3f3b751d43753bf49af428513b499fb5,

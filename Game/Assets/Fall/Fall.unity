@@ -174,6 +174,7 @@ MonoBehaviour:
   timeDelay: 2
   repeatTimeLimited: 1
   endTime: 26
+  sfx: {fileID: 0}
   bullets: {fileID: 3074566376644159587, guid: 0f4e17b2cdcd2b646977596eadead949, type: 3}
   zRotation: 270
   timeInterval: 3
@@ -223,6 +224,7 @@ MonoBehaviour:
   timeDelay: 20
   repeatTimeLimited: 1
   endTime: 35
+  sfx: {fileID: 0}
   bullets: {fileID: 2477227134345329285, guid: bf0b0f50fbfbbdd49b9df679a0529ec5, type: 3}
   zRotation: 0
   timeInterval: 1
@@ -282,6 +284,7 @@ MonoBehaviour:
   timeDelay: 30
   repeatTimeLimited: 1
   endTime: 90
+  sfx: {fileID: 0}
   bullets: {fileID: 5077198107450528179, guid: 79faf03666317c84e984eee7430fa6e7, type: 3}
   zRotation: 315
   timeInterval: 5
@@ -525,7 +528,7 @@ Transform:
   - {fileID: 1090792907}
   - {fileID: 2014500308}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &543333746
 GameObject:
@@ -1107,6 +1110,11 @@ PrefabInstance:
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 1420816738}
+    - target: {fileID: 7712509504078019959, guid: 89844e03d0c654142b56d20866317a62,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89844e03d0c654142b56d20866317a62, type: 3}
 --- !u!1 &1036039861
@@ -1712,6 +1720,12 @@ PrefabInstance:
       propertyPath: pointCounter
       value: 
       objectReference: {fileID: 1361442179}
+    - target: {fileID: 3960579755366954737, guid: 81fefca407c802d4e8c2c544ebaff062,
+        type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 7712509504997661884, guid: 89844e03d0c654142b56d20866317a62,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81fefca407c802d4e8c2c544ebaff062, type: 3}
 --- !u!1 &1420816738 stripped
@@ -2361,6 +2375,7 @@ MonoBehaviour:
   timeDelay: 10
   repeatTimeLimited: 0
   endTime: 0
+  sfx: {fileID: 0}
   bullets: {fileID: 3338084665339581270, guid: fc9994c201af84e428d7b59a22c90a6d, type: 3}
   zRotation: 270
   timeInterval: 1
@@ -2483,7 +2498,7 @@ Transform:
   - {fileID: 1158273707}
   - {fileID: 1091165366}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1971960418
 GameObject:
@@ -2934,6 +2949,7 @@ MonoBehaviour:
   timeDelay: 30
   repeatTimeLimited: 1
   endTime: 90
+  sfx: {fileID: 0}
   bullets: {fileID: 5077198107450528179, guid: 79faf03666317c84e984eee7430fa6e7, type: 3}
   zRotation: 225
   timeInterval: 5

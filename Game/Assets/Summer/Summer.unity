@@ -423,6 +423,10 @@ MonoBehaviour:
   maxY: 10
   minY: 8
   moveSpeed: 5
+  playerBulletLayer: 0
+  life: 0
+  enemy: {fileID: 0}
+  pointsPerHit: 0
 --- !u!114 &86180987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,6 +448,7 @@ MonoBehaviour:
   timeDelay: 0
   repeatTimeLimited: 1
   endTime: 60
+  sfx: {fileID: 0}
   bullets: {fileID: 3236056453523874952, guid: 811011a9aab85874bbc4ec3b6c672ea6, type: 3}
   zRotation: 270
   timeInterval: 5
@@ -917,6 +922,7 @@ MonoBehaviour:
   timeDelay: 0
   repeatTimeLimited: 1
   endTime: 30
+  sfx: {fileID: 0}
   bullets: {fileID: 3986225738673367274, guid: dd88bf395670a31478fc94aa8e768ce5, type: 3}
   zRotation: 0
   timeInterval: 5
@@ -945,6 +951,7 @@ MonoBehaviour:
   timeDelay: 0
   repeatTimeLimited: 1
   endTime: 30
+  sfx: {fileID: 0}
   bullets: {fileID: 3986225738673367274, guid: dd88bf395670a31478fc94aa8e768ce5, type: 3}
   zRotation: 0
   timeInterval: 5
@@ -1034,6 +1041,12 @@ PrefabInstance:
       propertyPath: pointCounter
       value: 
       objectReference: {fileID: 1379811033}
+    - target: {fileID: 3960579755366954737, guid: 81fefca407c802d4e8c2c544ebaff062,
+        type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 7712509504997661884, guid: 89844e03d0c654142b56d20866317a62,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81fefca407c802d4e8c2c544ebaff062, type: 3}
 --- !u!1 &662741322 stripped
@@ -1103,6 +1116,10 @@ MonoBehaviour:
   maxY: 7.8
   minY: 0
   moveSpeed: 2
+  playerBulletLayer: 0
+  life: 0
+  enemy: {fileID: 0}
+  pointsPerHit: 0
 --- !u!58 &758941891
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1224,6 +1241,7 @@ MonoBehaviour:
   timeDelay: 3
   repeatTimeLimited: 0
   endTime: 0
+  sfx: {fileID: 0}
   bullets: {fileID: 9167533568346889895, guid: 8a1a4cfa126a91d4e93906f0887d6f6d, type: 3}
   zRotation: 240
   timeInterval: 8
@@ -1252,6 +1270,7 @@ MonoBehaviour:
   timeDelay: 3
   repeatTimeLimited: 0
   endTime: 0
+  sfx: {fileID: 0}
   bullets: {fileID: 9167533568346889895, guid: 8a1a4cfa126a91d4e93906f0887d6f6d, type: 3}
   zRotation: 270
   timeInterval: 8
@@ -1280,6 +1299,7 @@ MonoBehaviour:
   timeDelay: 3
   repeatTimeLimited: 0
   endTime: 0
+  sfx: {fileID: 0}
   bullets: {fileID: 9167533568346889895, guid: 8a1a4cfa126a91d4e93906f0887d6f6d, type: 3}
   zRotation: 300
   timeInterval: 8
@@ -1478,7 +1498,7 @@ Transform:
   - {fileID: 597010462}
   - {fileID: 1564778922}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &880963612
 GameObject:
@@ -3119,7 +3139,7 @@ Transform:
   - {fileID: 1395810073}
   - {fileID: 1078952814}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1564778921
 GameObject:
@@ -3174,6 +3194,7 @@ MonoBehaviour:
   timeDelay: 0
   repeatTimeLimited: 1
   endTime: 30
+  sfx: {fileID: 0}
   bullets: {fileID: 3986225738673367274, guid: dd88bf395670a31478fc94aa8e768ce5, type: 3}
   zRotation: 0
   timeInterval: 5
@@ -3202,6 +3223,7 @@ MonoBehaviour:
   timeDelay: 0
   repeatTimeLimited: 1
   endTime: 30
+  sfx: {fileID: 0}
   bullets: {fileID: 3986225738673367274, guid: dd88bf395670a31478fc94aa8e768ce5, type: 3}
   zRotation: 0
   timeInterval: 5
