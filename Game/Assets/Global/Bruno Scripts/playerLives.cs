@@ -10,6 +10,10 @@ public class playerLives : MonoBehaviour {
     public GameObject playerPrefab;
     public int lives;
     public static int points = 0;
+    public static int bombs = 2;
+    public static int graze = 0;
+    public Text bombCounter;
+    public Text grazeCounter;
     public Text pointCounter;
     public Text lifeCounter;
 
@@ -63,6 +67,8 @@ public class playerLives : MonoBehaviour {
 
         pointCounter.GetComponent<UnityEngine.UI.Text>().text = points.ToString();
         lifeCounter.GetComponent<UnityEngine.UI.Text>().text = lives.ToString();
+        grazeCounter.GetComponent<UnityEngine.UI.Text>().text = graze.ToString();
+        bombCounter.GetComponent<UnityEngine.UI.Text>().text = graze.ToString();
 
     }
 }
