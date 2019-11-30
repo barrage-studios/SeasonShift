@@ -73,7 +73,14 @@ public class BossManager : MonoBehaviour {
     IEnumerator death()
     {
         yield return new WaitForSeconds(.05f);
-        GameData._instance.playerProfile.progressLevels();
+        if (!SceneEngine.PeekStack().Equals(SceneEngine.Scenes.WINTER))
+        {
+            GameData._instance.playerProfile.progressLevels();
+        }
+        else
+        {
+            Debug.LogWarning("No more levels to beat!");
+        }
         SceneEngine.PopScene();
     }
 }
