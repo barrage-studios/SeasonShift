@@ -59,7 +59,7 @@ public class GameData : MonoBehaviour
         else
         {
             Debug.LogError("No Player profile exists, will create one on save");
-            return null;
+            return new Profile();
         }
 
         BinaryFormatter bf = new BinaryFormatter();

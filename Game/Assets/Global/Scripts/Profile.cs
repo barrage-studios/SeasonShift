@@ -6,10 +6,16 @@ using UnityEngine;
 public class Profile
 {
     // Data
-    string name = "Player";
-    float playtime = 0.0f;
-    int LevelsCleared = 0;
+    string name;
+    float playtime;
+    int LevelsCleared;
     // Functions
+    public Profile()
+    {
+        this.name = "Player";
+        this.playtime = 0.0f;
+        this.LevelsCleared = 0;
+    }
     public Profile(string name, float playtime)
     {
         if (name.Length > 10)
