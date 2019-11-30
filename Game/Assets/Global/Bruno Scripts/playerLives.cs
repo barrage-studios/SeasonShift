@@ -14,6 +14,7 @@ public class playerLives : MonoBehaviour {
     public Text lifeCounter;
 
     public static int deathDetect = 0;
+    public static int bossD = 0;
     public int startAm = 3;
 
 	// Use this for initialization
@@ -22,12 +23,16 @@ public class playerLives : MonoBehaviour {
         deathDetect = 0;
     }
 
-    IEnumerator trueDeath()
+    public IEnumerator trueDeath()
     {
         yield return new WaitForSeconds(5f);
 
         SceneManager.LoadScene("LevelSelect");
 
+    }
+
+    public void bossDeath(){
+        SceneManager.LoadScene("LevelSelect");
     }
 	
 	// Update is called once per frame
@@ -47,6 +52,11 @@ public class playerLives : MonoBehaviour {
             }
             
             
+        }
+
+        if(bossD > 0){
+            bossD = 0;
+            bossDeath();
         }
 
         if(lives <= 0 && deathDetect == 1){

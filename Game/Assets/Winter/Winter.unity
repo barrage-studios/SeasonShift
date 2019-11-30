@@ -1829,7 +1829,7 @@ GameObject:
   - component: {fileID: 949384320}
   m_Layer: 13
   m_Name: winterBoss
-  m_TagString: Untagged
+  m_TagString: boss4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

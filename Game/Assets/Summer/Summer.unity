@@ -1094,7 +1094,7 @@ GameObject:
   - component: {fileID: 758941895}
   m_Layer: 13
   m_Name: summerBoss
-  m_TagString: Untagged
+  m_TagString: boss2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

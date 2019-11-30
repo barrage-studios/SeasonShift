@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossManager : MonoBehaviour {
 
@@ -18,6 +20,7 @@ public class BossManager : MonoBehaviour {
     // Enemy Bullet Collision Data
     public int playerBulletLayer;
     public int life;
+    public GameObject levelManager;
     public GameObject enemy;
     public int pointsPerHit;
 
@@ -73,10 +76,29 @@ public class BossManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(.05f);
 
+        if(this.gameObject.tag == "boss1"){
+            GameData._instance.playerProfile.modLevelsCleared(1);
+        }
+        else if(this.gameObject.tag == "boss2"){
+            GameData._instance.playerProfile.modLevelsCleared(2);
+        }
+        else if(this.gameObject.tag == "boss3"){
+            GameData._instance.playerProfile.modLevelsCleared(3);
+        }
+        else if(this.gameObject.tag == "boss4"){
+            GameData._instance.playerProfile.modLevelsCleared(4);
+        }
+        
+
+
+
         if (this.gameObject.layer == 12)
         {
             checkBossDeath.boss1death = checkBossDeath.boss1death + 1;
         }
+
+        SceneManager.LoadScene("LevelSelect");
+
         Destroy(enemy.gameObject);
     }
 }

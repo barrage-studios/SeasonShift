@@ -106,7 +106,8 @@ MonoBehaviour:
   blinkInterval: 0.2
   sfx: {fileID: 0}
   topLayer: {fileID: 7712509505276758361}
-  levelManager: {fileID: 0}
+  levelManager: {fileID: 3960579755366954736, guid: 81fefca407c802d4e8c2c544ebaff062,
+    type: 3}
   playerBulletPrefab: {fileID: 2181238190652251617, guid: f6a4466ade430054388aa3ccf5a86bfa,
     type: 3}
   initialspawnPos: {fileID: 3950005681442700936, guid: 7ad62ecaee632704b8f9b13971003652,
