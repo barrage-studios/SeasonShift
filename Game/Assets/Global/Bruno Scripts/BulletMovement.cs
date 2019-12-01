@@ -128,9 +128,8 @@ public class BulletMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll){
         
-        Debug.Log("coll");
+        Debug.Log(coll.gameObject.layer);
         if(this.gameObject.layer == 11){
-            Debug.Log("lay1");
             if((coll.gameObject.CompareTag("bombHit"))){
                 Debug.Log("kay2");
                 Destroy(this.gameObject);

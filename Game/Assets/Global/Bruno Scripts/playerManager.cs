@@ -58,15 +58,19 @@ public class playerManager : MonoBehaviour
         {
 
             GetComponent<SpriteRenderer>().enabled = !(GetComponent<SpriteRenderer>().enabled); // this is what is finding the sprite renderer and turning it the opposite of whatever it is currently
-            
+            topLayer.GetComponent<SpriteRenderer>().enabled = !(topLayer.GetComponent<SpriteRenderer>().enabled);
 
             yield return new WaitForSeconds(blinkInterval);
 
         }
 
-
+        topLayer.GetComponent<SpriteRenderer>().enabled = true;
         GetComponent<SpriteRenderer>().enabled = true; // the coroutine ends with the sprite renderer on
         yield return new WaitForSeconds(0);
+    }
+
+    public void deathD(){
+        StartCoroutine("death");
     }
 
     IEnumerator death()
@@ -114,7 +118,7 @@ public class playerManager : MonoBehaviour
         CircleCollider2D box;
         float bombTick = amTime;
         box = bombHitbox.GetComponent<CircleCollider2D>();
-
+ 
         while(bombTick+2 > amTime){
             box.radius += 1f;
             yield return new WaitForEndOfFrame();
@@ -123,7 +127,6 @@ public class playerManager : MonoBehaviour
             box.radius += -1f;
             yield return new WaitForEndOfFrame();
         }
-
         yield return new WaitForSeconds(5f);
     }
 
@@ -138,19 +141,7 @@ public class playerManager : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D col)
-    {
-
-        if (col.gameObject.layer == enemyBulletLayer)
-        {
-            if(this.gameObject.layer == 8){
-                Destroy(col.gameObject);
-                StartCoroutine("death");    
-            }
-            
-        }
-
-    }
+    
 
     public void Update()
     {
@@ -178,11 +169,8 @@ public class playerManager : MonoBehaviour
                 Debug.Log("yes/s");
                 playerLives.bombs = playerLives.bombs - 1;
                 StartCoroutine("bomb");
-                bombHitbox.GetComponent<Collider2D>().enabled = true;
             }
         }
-
-        bombHitbox.GetComponent<Collider2D>().enabled = false;
 
         if (playerMovementActive)
         {
@@ -196,8 +184,10 @@ public class playerManager : MonoBehaviour
             }
             else // this is the general speed of the player
             {
+                if(isKillable){
+                    topLayer.GetComponent<SpriteRenderer>().enabled = true;
+                }
                 
-                topLayer.GetComponent<SpriteRenderer>().enabled = true;
 
                 Vector3 tempVect = new Vector3(h, v, 0);
                 tempVect = tempVect.normalized * firstSpeed * Time.fixedDeltaTime;
