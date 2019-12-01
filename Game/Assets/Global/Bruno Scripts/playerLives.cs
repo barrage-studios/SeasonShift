@@ -35,25 +35,25 @@ public class playerLives : MonoBehaviour {
         SceneManager.LoadScene("LevelSelect");
     }
 
-	// Update is called once per frame
-	void Update () 
+    // Update is called once per frame
+    void Update()
     {
-        if ((deathDetect > 0) & (lives > 0) & (playerManager.isKillable)) 
+        if ((deathDetect > 0) & (lives > 0) & (playerManager.isKillable))
         {
             float xpos = initialspawnPos.GetComponent<Transform>().position.x;
             float ypos = initialspawnPos.GetComponent<Transform>().position.y;
             Vector3 pos = new Vector3(xpos, ypos, -10f);
-            Quaternion angle = Quaternion.Euler(0f,0f,0f);
+            Quaternion angle = Quaternion.Euler(0f, 0f, 0f);
 
             if (lives > 0)
             {
                 Instantiate(playerPrefab, pos, angle);
                 deathDetect -= 1;
                 lives = lives - 1;
-            }  
+            }
         }
 
-        if(lives <= 0 && deathDetect == 1)
+        if (lives <= 0 && deathDetect == 1)
         {
             StartCoroutine("trueDeath");
         }
@@ -62,7 +62,7 @@ public class playerLives : MonoBehaviour {
         lifeCounter.GetComponent<UnityEngine.UI.Text>().text = lives.ToString();
         grazeCounter.GetComponent<UnityEngine.UI.Text>().text = graze.ToString();
         bombCounter.GetComponent<UnityEngine.UI.Text>().text = bombs.ToString();
-
+    }
     private void OnDestroy()
     {
         GameData._instance.playerProfile.addScore(points);
