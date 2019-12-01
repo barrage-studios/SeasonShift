@@ -19,6 +19,7 @@ public class playerManager : MonoBehaviour
     public AudioSource sfx;
     public GameObject topLayer;
     public GameObject levelManager;
+    public GameObject bombHitbox;
     public GameObject playerBulletPrefab;
     public GameObject initialspawnPos; // the location the player will spawn after death(if it still has enough lives left)
 
@@ -28,6 +29,7 @@ public class playerManager : MonoBehaviour
     private bool check = true;   // This check and the one below are used in the player shooting coroutine, to make sure that it doesn't continue on forever
     private bool check2 = false;
     private bool playerMovementActive = true;
+    private float radius = .25f;
 
 
     IEnumerator shooting()
@@ -108,6 +110,23 @@ public class playerManager : MonoBehaviour
         Debug.Log(isKillable);
     }
 
+    IEnumerator bomb(){
+        CircleCollider2D box;
+        float bombTick = amTime;
+        box = bombHitbox.GetComponent<CircleCollider2D>();
+
+        while(bombTick+5 > amTime){
+            box.radius += 1f;
+            yield return new WaitForEndOfFrame();
+        }
+        while(bombTick+11 > amTime){
+            box.radius += -1f;
+            yield return new WaitForEndOfFrame();
+        }
+
+        yield return new WaitForSeconds(5f);
+    }
+
 
 
     public void Start()
@@ -115,6 +134,8 @@ public class playerManager : MonoBehaviour
         Physics2D.IgnoreLayerCollision(this.gameObject.layer, playerBulletPrefab.gameObject.layer);
         StartCoroutine("playerMove"); // this and the next coroutine are utilized when the player spawns
         StartCoroutine("playerBlink");
+        bombHitbox.GetComponent<CircleCollider2D>().radius = radius;
+        
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -151,6 +172,17 @@ public class playerManager : MonoBehaviour
             check2 = false;
         }
 
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            if(playerLives.bombs > 0){
+                Debug.Log("yes/s");
+                playerLives.bombs = playerLives.bombs - 1;
+                StartCoroutine("bomb");
+                bombHitbox.GetComponent<Collider2D>().enabled = true;
+            }
+        }
+
+        bombHitbox.GetComponent<Collider2D>().enabled = false;
 
         if (playerMovementActive)
         {

@@ -197,6 +197,23 @@ PrefabInstance:
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 563031488}
+    - target: {fileID: 7712509504997661883, guid: 89844e03d0c654142b56d20866317a62,
+        type: 3}
+      propertyPath: bombHitbox
+      value: 
+      objectReference: {fileID: 507991918}
+    - target: {fileID: 158283684, guid: 89844e03d0c654142b56d20866317a62, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.08906252
+      objectReference: {fileID: 0}
+    - target: {fileID: 158283684, guid: 89844e03d0c654142b56d20866317a62, type: 3}
+      propertyPath: m_Radius
+      value: 2.2266276
+      objectReference: {fileID: 0}
+    - target: {fileID: 158283684, guid: 89844e03d0c654142b56d20866317a62, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89844e03d0c654142b56d20866317a62, type: 3}
 --- !u!1 &46579083
@@ -518,15 +535,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 453487895}
     m_Modifications:
-    - target: {fileID: 3568753112237689566, guid: 7489aa24e79ace045b0285689e00c3be,
-        type: 3}
-      propertyPath: m_Text
-      value: 0123456780
-      objectReference: {fileID: 0}
     - target: {fileID: 3568753112237689504, guid: 7489aa24e79ace045b0285689e00c3be,
         type: 3}
       propertyPath: m_Name
       value: lives
+      objectReference: {fileID: 0}
+    - target: {fileID: 3568753112237689566, guid: 7489aa24e79ace045b0285689e00c3be,
+        type: 3}
+      propertyPath: m_Text
+      value: 0123456780
       objectReference: {fileID: 0}
     - target: {fileID: 3568753112237689567, guid: 7489aa24e79ace045b0285689e00c3be,
         type: 3}
@@ -731,6 +748,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453487894}
   m_CullTransparentMesh: 0
+--- !u!1 &507991918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 158283681, guid: 89844e03d0c654142b56d20866317a62,
+    type: 3}
+  m_PrefabInstance: {fileID: 34726051}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &507991919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507991918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da5330dcdb5295e42a6e491193d6acfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBulletLayer: 11
+  bulletLayer: 11
+  wall: {fileID: 507991918}
 --- !u!1 &545110514
 GameObject:
   m_ObjectHideFlags: 0
@@ -2855,6 +2893,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 762340338}
     m_Modifications:
+    - target: {fileID: 6273821881554915471, guid: 3f3b751d43753bf49af428513b499fb5,
+        type: 3}
+      propertyPath: m_Name
+      value: Score
+      objectReference: {fileID: 0}
     - target: {fileID: 6273821881554915470, guid: 3f3b751d43753bf49af428513b499fb5,
         type: 3}
       propertyPath: m_FontData.m_Alignment
@@ -2864,11 +2907,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: 0123456780
-      objectReference: {fileID: 0}
-    - target: {fileID: 6273821881554915471, guid: 3f3b751d43753bf49af428513b499fb5,
-        type: 3}
-      propertyPath: m_Name
-      value: Score
       objectReference: {fileID: 0}
     - target: {fileID: 6273821881554915464, guid: 3f3b751d43753bf49af428513b499fb5,
         type: 3}
