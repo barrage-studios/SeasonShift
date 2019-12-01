@@ -948,15 +948,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 62938988}
     m_Modifications:
-    - target: {fileID: 3568753112237689566, guid: 7489aa24e79ace045b0285689e00c3be,
-        type: 3}
-      propertyPath: m_Text
-      value: 0123456780
-      objectReference: {fileID: 0}
     - target: {fileID: 3568753112237689504, guid: 7489aa24e79ace045b0285689e00c3be,
         type: 3}
       propertyPath: m_Name
       value: lives
+      objectReference: {fileID: 0}
+    - target: {fileID: 3568753112237689566, guid: 7489aa24e79ace045b0285689e00c3be,
+        type: 3}
+      propertyPath: m_Text
+      value: 0123456780
       objectReference: {fileID: 0}
     - target: {fileID: 3568753112237689567, guid: 7489aa24e79ace045b0285689e00c3be,
         type: 3}
@@ -1160,6 +1160,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277317070}
   m_CullTransparentMesh: 0
+--- !u!1001 &382961750
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4183323598754501455, guid: 3579b15cbbc31c243aa52d6dcafbfa48,
+        type: 3}
+      propertyPath: m_Name
+      value: Audio Source(Empty)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183323598754501449, guid: 3579b15cbbc31c243aa52d6dcafbfa48,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.68924
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183323598754501449, guid: 3579b15cbbc31c243aa52d6dcafbfa48,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.24997437
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183323598754501449, guid: 3579b15cbbc31c243aa52d6dcafbfa48,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -82.14453
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183323598754501449, guid: 3579b15cbbc31c243aa52d6dcafbfa48,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183323598754501449, guid: 3579b15cbbc31c243aa52d6dcafbfa48,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183323598754501449, guid: 3579b15cbbc31c243aa52d6dcafbfa48,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183323598754501449, guid: 3579b15cbbc31c243aa52d6dcafbfa48,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183323598754501449, guid: 3579b15cbbc31c243aa52d6dcafbfa48,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183323598754501449, guid: 3579b15cbbc31c243aa52d6dcafbfa48,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183323598754501449, guid: 3579b15cbbc31c243aa52d6dcafbfa48,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183323598754501449, guid: 3579b15cbbc31c243aa52d6dcafbfa48,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3579b15cbbc31c243aa52d6dcafbfa48, type: 3}
 --- !u!1 &547642510
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,6 +1954,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 84409759}
     m_Modifications:
+    - target: {fileID: 6273821881554915471, guid: 3f3b751d43753bf49af428513b499fb5,
+        type: 3}
+      propertyPath: m_Name
+      value: Score
+      objectReference: {fileID: 0}
     - target: {fileID: 6273821881554915470, guid: 3f3b751d43753bf49af428513b499fb5,
         type: 3}
       propertyPath: m_FontData.m_Alignment
@@ -1894,11 +1968,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: 0123456780
-      objectReference: {fileID: 0}
-    - target: {fileID: 6273821881554915471, guid: 3f3b751d43753bf49af428513b499fb5,
-        type: 3}
-      propertyPath: m_Name
-      value: Score
       objectReference: {fileID: 0}
     - target: {fileID: 6273821881554915464, guid: 3f3b751d43753bf49af428513b499fb5,
         type: 3}

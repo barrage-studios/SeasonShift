@@ -226,7 +226,7 @@ MonoBehaviour:
   enemyBulletLayer: 11
   shootingInterval: 0.05
   blinkInterval: 0.2
-  sfx: {fileID: 0}
+  sfx: {fileID: 4183323598754501454, guid: 3579b15cbbc31c243aa52d6dcafbfa48, type: 3}
   topLayer: {fileID: 7712509505276758361}
   levelManager: {fileID: 0}
   bombHitbox: {fileID: 158283681}
