@@ -1,15 +1,14 @@
 # language
 language: objective-c
+osx_image: xcode9.2
+rvm:
+  - 2.2        #see before_install for getting RVM stable.
 
 # Matrix
 matrix:
   include:
   # Windows Build
   - name: "Windows"
-    os: osx
-    osx_image: xcode10
-    rvm:
-      - 2.2        #see before_install for getting RVM stable.
     env:
     # - TRAVIS_TAG="Deploy-2019.2.6f1" # This sets the tag on a build
       - PROJECT_NAME="SeasonShift" 
@@ -21,10 +20,6 @@ matrix:
         - $UNITY_DOWNLOAD_CACHE
   # OSX Build
   - name: "Mac"
-    os: osx
-    osx_image: xcode10
-    rvm:
-      - 2.2
     env:
     # - TRAVIS_TAG="Deploy-2019.2.6f1" # This sets the tag on a build
       - PROJECT_NAME="SeasonShift" 
@@ -36,10 +31,6 @@ matrix:
         - $UNITY_DOWNLOAD_CACHE
   # Linux Build
   - name: "Linux"
-    os: osx
-    osx_image: xcode10
-    rvm:
-      - 2.2
     env:
     # - TRAVIS_TAG="Deploy-2019.2.6f1" # This sets the tag on a build
       - PROJECT_NAME="SeasonShift" 
@@ -51,10 +42,6 @@ matrix:
         - $UNITY_DOWNLOAD_CACHE
   # WebGL Build
   - name: "WebGL"
-    os: osx
-    osx_image: xcode10
-    rvm:
-      - 2.2
     env:
     # - TRAVIS_TAG="Deploy-2019.2.6f1" # This sets the tag on a build
       - PROJECT_NAME="SeasonShift" 
@@ -71,6 +58,7 @@ matrix:
     
 before_install:
 - chmod a+x ./buildScripts/*.sh
+- rvm install 2.2.1
 
 install:
 - cat /etc/hosts
@@ -88,7 +76,7 @@ script:
 - ./buildScripts/run-tests.sh
 
 after_success:
-- ./buildScripts/export-unity-package.sh
+#- ./buildScripts/export-unity-package.sh
 
 before_deploy:
 - DEPLOY_UNITYPACKAGE="$(ls -a release/*.zip | head -n 1)"
