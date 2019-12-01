@@ -143,11 +143,11 @@ public class playerManager : MonoBehaviour
 
         if (col.gameObject.layer == enemyBulletLayer)
         {
+            if(this.gameObject.layer == 8){
+                Destroy(col.gameObject);
+                StartCoroutine("death");    
+            }
             
-            Destroy(col.gameObject);
-
-            StartCoroutine("death");
-
         }
 
     }
