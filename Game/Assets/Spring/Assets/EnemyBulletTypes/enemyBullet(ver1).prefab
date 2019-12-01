@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3177838382303056476}
   - component: {fileID: 7995017337254349832}
   - component: {fileID: 5422811742941715914}
+  - component: {fileID: 3692097544894551672}
   m_Layer: 11
   m_Name: enemyBullet(ver1)
   m_TagString: Untagged
@@ -121,3 +122,24 @@ MonoBehaviour:
   secTimeChange: 0
   thirYvelocity: 0
   thirXVelocity: 0
+--- !u!50 &3692097544894551672
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8356103588638205337}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7

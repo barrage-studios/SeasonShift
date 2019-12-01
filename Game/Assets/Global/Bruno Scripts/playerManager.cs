@@ -115,11 +115,11 @@ public class playerManager : MonoBehaviour
         float bombTick = amTime;
         box = bombHitbox.GetComponent<CircleCollider2D>();
 
-        while(bombTick+5 > amTime){
+        while(bombTick+2 > amTime){
             box.radius += 1f;
             yield return new WaitForEndOfFrame();
         }
-        while(bombTick+11 > amTime){
+        while(bombTick+5 > amTime){
             box.radius += -1f;
             yield return new WaitForEndOfFrame();
         }

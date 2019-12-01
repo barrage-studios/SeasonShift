@@ -124,6 +124,18 @@ public class BulletMovement : MonoBehaviour
     {
         
         amTime = amTime + Time.deltaTime;
-
     }
+
+    void OnCollisionEnter2D(Collision2D coll){
+        
+        Debug.Log("coll");
+        if(this.gameObject.layer == 11){
+            Debug.Log("lay1");
+            if((coll.gameObject.CompareTag("bombHit"))){
+                Debug.Log("kay2");
+                Destroy(this.gameObject);
+            }
+        }
+    }
+
 }

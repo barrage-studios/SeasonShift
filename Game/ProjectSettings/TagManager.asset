@@ -8,6 +8,7 @@ TagManager:
   - boss2
   - boss3
   - boss4
+  - bombHit
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - enemyBullets
   - enemySpawners
   - Boss
-  - 
+  - bombBox
   - 
   - 
   - 

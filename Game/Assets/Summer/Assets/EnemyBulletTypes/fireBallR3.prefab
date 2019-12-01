@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3332770924075744273}
   - component: {fileID: 8663933150963353324}
   - component: {fileID: 3530848043312668115}
+  - component: {fileID: 5416570662712852768}
   m_Layer: 11
   m_Name: fireBallR3
   m_TagString: Untagged
@@ -121,3 +122,24 @@ MonoBehaviour:
   secTimeChange: 0
   thirYvelocity: 0
   thirXVelocity: 0
+--- !u!50 &5416570662712852768
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477351637747905007}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7

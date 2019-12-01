@@ -197,23 +197,6 @@ PrefabInstance:
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 563031488}
-    - target: {fileID: 7712509504997661883, guid: 89844e03d0c654142b56d20866317a62,
-        type: 3}
-      propertyPath: bombHitbox
-      value: 
-      objectReference: {fileID: 507991918}
-    - target: {fileID: 158283684, guid: 89844e03d0c654142b56d20866317a62, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.08906252
-      objectReference: {fileID: 0}
-    - target: {fileID: 158283684, guid: 89844e03d0c654142b56d20866317a62, type: 3}
-      propertyPath: m_Radius
-      value: 2.2266276
-      objectReference: {fileID: 0}
-    - target: {fileID: 158283684, guid: 89844e03d0c654142b56d20866317a62, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89844e03d0c654142b56d20866317a62, type: 3}
 --- !u!1 &46579083
@@ -748,27 +731,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453487894}
   m_CullTransparentMesh: 0
---- !u!1 &507991918 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 158283681, guid: 89844e03d0c654142b56d20866317a62,
-    type: 3}
-  m_PrefabInstance: {fileID: 34726051}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &507991919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 507991918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da5330dcdb5295e42a6e491193d6acfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerBulletLayer: 11
-  bulletLayer: 11
-  wall: {fileID: 507991918}
 --- !u!1 &545110514
 GameObject:
   m_ObjectHideFlags: 0

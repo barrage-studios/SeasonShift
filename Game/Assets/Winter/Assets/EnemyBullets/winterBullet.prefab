@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8516822789658919218}
   - component: {fileID: 7752225052078546608}
   - component: {fileID: -8073260728813947761}
+  - component: {fileID: -1058426944906044244}
   m_Layer: 11
   m_Name: winterBullet
   m_TagString: Untagged
@@ -121,3 +122,24 @@ MonoBehaviour:
   secTimeChange: 0
   thirYvelocity: 0
   thirXVelocity: 0
+--- !u!50 &-1058426944906044244
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898722245897435023}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7

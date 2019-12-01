@@ -65,6 +65,7 @@ public class BossManager : MonoBehaviour {
 
             if (life <= 0)
             {
+                Debug.Log("Dead");
                 StartCoroutine("death");
             }
         }
@@ -72,6 +73,7 @@ public class BossManager : MonoBehaviour {
 
     IEnumerator death()
     {
+        
         GameData._instance.setPlaying(false);
         yield return new WaitForSeconds(.05f);
         if (!SceneEngine.PeekStack().Equals(SceneEngine.Scenes.WINTER))
@@ -83,5 +85,6 @@ public class BossManager : MonoBehaviour {
             Debug.LogWarning("No more levels to beat!");
         }
         SceneEngine.PopScene();
+        Destroy(this.gameObject);
     }
 }

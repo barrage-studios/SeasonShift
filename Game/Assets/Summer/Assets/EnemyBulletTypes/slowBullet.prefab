@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4585002372349548271}
   - component: {fileID: -8151930407289099942}
   - component: {fileID: -6154135885187865892}
+  - component: {fileID: 92976287321087396}
   m_Layer: 11
   m_Name: slowBullet
   m_TagString: Untagged
@@ -121,3 +122,24 @@ MonoBehaviour:
   secTimeChange: 0
   thirYvelocity: 0
   thirXVelocity: 0
+--- !u!50 &92976287321087396
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6939828289546989967}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
