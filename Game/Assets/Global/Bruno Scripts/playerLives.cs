@@ -22,7 +22,8 @@ public class playerLives : MonoBehaviour {
     public int startAm = 3;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
         lives = startAm;
         deathDetect = 0;
     }
@@ -32,14 +33,13 @@ public class playerLives : MonoBehaviour {
         yield return new WaitForSeconds(5f);
 
         SceneManager.LoadScene("LevelSelect");
-
     }
 
-   
-	
 	// Update is called once per frame
-	void Update () {
-        if ((deathDetect > 0) & (lives > 0) & (playerManager.isKillable)) {
+	void Update () 
+    {
+        if ((deathDetect > 0) & (lives > 0) & (playerManager.isKillable)) 
+        {
             float xpos = initialspawnPos.GetComponent<Transform>().position.x;
             float ypos = initialspawnPos.GetComponent<Transform>().position.y;
             Vector3 pos = new Vector3(xpos, ypos, -10f);
@@ -50,25 +50,22 @@ public class playerLives : MonoBehaviour {
                 Instantiate(playerPrefab, pos, angle);
                 deathDetect -= 1;
                 lives = lives - 1;
-                
-            }
-            
-            
+            }  
         }
 
-       
-
-        if(lives <= 0 && deathDetect == 1){
+        if(lives <= 0 && deathDetect == 1)
+        {
             StartCoroutine("trueDeath");
         }
-
-
-
 
         pointCounter.GetComponent<UnityEngine.UI.Text>().text = points.ToString();
         lifeCounter.GetComponent<UnityEngine.UI.Text>().text = lives.ToString();
         grazeCounter.GetComponent<UnityEngine.UI.Text>().text = graze.ToString();
         bombCounter.GetComponent<UnityEngine.UI.Text>().text = graze.ToString();
+    }
 
+    private void OnDestroy()
+    {
+        GameData._instance.playerProfile.addScore(points);
     }
 }

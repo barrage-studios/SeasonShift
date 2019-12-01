@@ -17,6 +17,7 @@ public class LevelSelectManager : MonoBehaviour
     }
     public void SelectLevel(int level)
     {
+        GameData._instance.setPlaying(true);
         switch (level)
         {
             case 1:

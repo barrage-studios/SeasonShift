@@ -8,12 +8,14 @@ public class Profile
     // Data
     string name;
     float playtime;
+    int totalScore;
     int LevelsCleared;
     // Functions
     public Profile()
     {
         this.name = "Player";
         this.playtime = 0.0f;
+        this.totalScore = 0;
         this.LevelsCleared = 0;
     }
     public Profile(string name, float playtime)
@@ -45,6 +47,10 @@ public class Profile
     {
         return this.playtime;
     }
+    public int getTotalScore()
+    {
+        return this.totalScore;
+    }
     public int getLevelsCleared()
     {
         return LevelsCleared;
@@ -52,6 +58,10 @@ public class Profile
     public void progressLevels()
     {
         LevelsCleared++;
+    }
+    public void addScore(int score)
+    {
+        totalScore += score;
     }
     public void addPlaytime(float time)
     {

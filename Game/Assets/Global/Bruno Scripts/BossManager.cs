@@ -72,6 +72,7 @@ public class BossManager : MonoBehaviour {
 
     IEnumerator death()
     {
+        GameData._instance.setPlaying(false);
         yield return new WaitForSeconds(.05f);
         if (!SceneEngine.PeekStack().Equals(SceneEngine.Scenes.WINTER))
         {
