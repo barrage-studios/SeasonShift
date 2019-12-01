@@ -61,8 +61,7 @@ public class playerLives : MonoBehaviour {
         pointCounter.GetComponent<UnityEngine.UI.Text>().text = points.ToString();
         lifeCounter.GetComponent<UnityEngine.UI.Text>().text = lives.ToString();
         grazeCounter.GetComponent<UnityEngine.UI.Text>().text = graze.ToString();
-        bombCounter.GetComponent<UnityEngine.UI.Text>().text = graze.ToString();
-    }
+        bombCounter.GetComponent<UnityEngine.UI.Text>().text = bombs.ToString();
 
     private void OnDestroy()
     {
