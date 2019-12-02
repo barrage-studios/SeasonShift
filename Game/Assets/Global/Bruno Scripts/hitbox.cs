@@ -22,7 +22,7 @@ public class hitbox : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
 
-        if ((col.gameObject.layer == 11)||(col.gameObject.layer == 12)||(col.gameObject.layer == 13))
+        if ((col.gameObject.layer == 11))
         {
             if(this.gameObject.layer == 8){        
                 Debug.Log("play lay: " + this.gameObject.layer);
@@ -31,6 +31,12 @@ public class hitbox : MonoBehaviour
             }
             
             
+        }
+        if((col.gameObject.layer == 12)||(col.gameObject.layer == 13)){
+            if(this.gameObject.layer == 8){        
+                Debug.Log("play lay: " + this.gameObject.layer);
+                playerprefab.GetComponent<playerManager>().deathD();  
+            }
         }
 
     }
