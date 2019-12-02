@@ -16,6 +16,13 @@ public class IntroManager : MonoBehaviour
             splash.color = color;
         }
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneEngine.PopScene();
+        }
+    }
     void FixedUpdate()
     {
         Color color = Splashes[currentSplash].color;

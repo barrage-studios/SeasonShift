@@ -14,6 +14,13 @@ public class LevelSelectManager : MonoBehaviour
             buttons[i].interactable = true;
         }
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneEngine.PopScene();
+        }
+    }
     public void SelectLevel(int level)
     {
         GameData._instance.setPlaying(true);
