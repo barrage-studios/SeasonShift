@@ -35,11 +35,17 @@ public class LevelSelectManager : MonoBehaviour
     }
     public void IsHovered(GameObject obj)
     {
+        if (!obj.GetComponentInParent<Button>().interactable)
+            return;
+
         Text text = obj.GetComponent<Text>();
         text.color = new Color(248, 255, 0);
     }
     public void IsUnHovered(GameObject obj)
     {
+        if (!obj.GetComponentInParent<Button>().interactable)
+            return;
+
         Text text = obj.GetComponent<Text>();
         text.color = new Color(255, 255, 255);
     }
