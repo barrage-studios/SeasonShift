@@ -7,14 +7,17 @@ public class playerLives : MonoBehaviour {
 
     public GameObject initialspawnPos;
     public GameObject playerPrefab;
+
     public int lives;
     public static int points = 0;
     public static int bombs = 2;
     public static int graze = 0;
+
     public Text bombCounter;
     public Text grazeCounter;
     public Text pointCounter;
     public Text lifeCounter;
+    public Text pauseText;
 
     public static int deathDetect = 0;
     public static int bossD = 0;
@@ -39,6 +42,24 @@ public class playerLives : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Time.timeScale != 0.0)
+            {
+                Time.timeScale = 0.0f;
+                pauseText.color = (pauseText.color - new Color(0, 0, 0, 255));
+            }
+            else
+            {
+                Time.timeScale = 1.0f;
+                pauseText.color = (pauseText.color + new Color(0, 0, 0, 255));
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Backspace) && Time.timeScale == 0.0f)
+        {
+            SceneEngine.PopScene();
+        }
+
         if ((deathDetect > 0) & (lives > 0) & (playerManager.isKillable))
         {
             float xpos = initialspawnPos.GetComponent<Transform>().position.x;
