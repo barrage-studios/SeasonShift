@@ -33,4 +33,14 @@ public class LevelSelectManager : MonoBehaviour
                 break;
         }
     }
+    public void IsHovered(GameObject obj)
+    {
+        Text text = obj.GetComponent<Text>();
+        text.color = new Color(248, 255, 0);
+    }
+    public void IsUnHovered(GameObject obj)
+    {
+        Text text = obj.GetComponent<Text>();
+        text.color = new Color(255, 255, 255);
+    }
 }
