@@ -19,6 +19,9 @@ public class LevelSelectManager : MonoBehaviour
         GameData._instance.setPlaying(true);
         switch (level)
         {
+            case 0:
+                SceneEngine.PopScene();
+                break;
             case 1:
                 SceneEngine.PushScene(SceneEngine.Scenes.SPRING);
                 break;
