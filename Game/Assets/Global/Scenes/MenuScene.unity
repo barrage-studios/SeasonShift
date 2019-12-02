@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 534115863}
   - component: {fileID: 534115862}
   - component: {fileID: 534115861}
+  - component: {fileID: 534115864}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -394,6 +395,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534115859}
   m_CullTransparentMesh: 0
+--- !u!114 &534115864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534115859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1368796142}
+          m_MethodName: IsHovered
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1742571459}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1368796142}
+          m_MethodName: IsUnHovered
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1742571459}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
 --- !u!1 &709521654
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +450,7 @@ GameObject:
   - component: {fileID: 709521658}
   - component: {fileID: 709521657}
   - component: {fileID: 709521656}
+  - component: {fileID: 709521659}
   m_Layer: 5
   m_Name: Profiles
   m_TagString: Untagged
@@ -457,7 +502,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -523,6 +568,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 709521654}
   m_CullTransparentMesh: 0
+--- !u!114 &709521659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709521654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1368796142}
+          m_MethodName: IsHovered
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 955555399}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1368796142}
+          m_MethodName: IsUnHovered
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 955555399}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
 --- !u!1 &865946545
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,8 +722,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 10.6, y: 0}
+  m_SizeDelta: {x: 21.3, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &955555401
 MonoBehaviour:
@@ -1227,6 +1315,7 @@ GameObject:
   - component: {fileID: 1780132617}
   - component: {fileID: 1780132616}
   - component: {fileID: 1780132615}
+  - component: {fileID: 1780132618}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -1344,6 +1433,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780132613}
   m_CullTransparentMesh: 0
+--- !u!114 &1780132618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780132613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1368796142}
+          m_MethodName: IsHovered
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 865946545}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1368796142}
+          m_MethodName: IsUnHovered
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 865946545}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
 --- !u!1001 &1943695057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1425,6 +1557,7 @@ GameObject:
   - component: {fileID: 2058821947}
   - component: {fileID: 2058821946}
   - component: {fileID: 2058821945}
+  - component: {fileID: 2058821948}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -1542,6 +1675,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058821943}
   m_CullTransparentMesh: 0
+--- !u!114 &2058821948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058821943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1368796142}
+          m_MethodName: IsHovered
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1648087510}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1368796142}
+          m_MethodName: IsUnHovered
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1648087510}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
 --- !u!1 &2079176784
 GameObject:
   m_ObjectHideFlags: 0
