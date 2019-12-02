@@ -24,6 +24,8 @@ public class playerLives : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
+        bombs = 2;
+        lives = 3;
         lives = startAm;
         deathDetect = 0;
     }
