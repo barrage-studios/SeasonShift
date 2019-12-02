@@ -166,7 +166,7 @@ MonoBehaviour:
   timeDelay: 0
   repeatTimeLimited: 0
   endTime: 0
-  sfx: {fileID: 0}
+  sfx: {fileID: 4183323598754501454, guid: 3579b15cbbc31c243aa52d6dcafbfa48, type: 3}
   bullets: {fileID: 7789136648754956153, guid: 708ce7c1f9b433d48bd216396f639e78, type: 3}
   zRotation: 0
   timeInterval: 2
