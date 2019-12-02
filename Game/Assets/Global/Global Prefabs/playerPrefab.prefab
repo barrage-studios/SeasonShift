@@ -221,8 +221,8 @@ MonoBehaviour:
   spawnSpeed: 1
   invTime1: 3
   invTime2: 6
-  firstSpeed: 10
-  secondSpeed: 5
+  firstSpeed: 6
+  secondSpeed: 3
   enemyBulletLayer: 11
   shootingInterval: 0.05
   blinkInterval: 0.2
