@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - boss1
+  - boss2
+  - boss3
+  - boss4
+  - bombHit
   layers:
   - Default
   - TransparentFX
@@ -13,14 +18,14 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - player
+  - wall
+  - playerBullets
+  - enemyBullets
+  - enemySpawners
+  - Boss
+  - bombBox
+  - top
   - 
   - 
   - 
