@@ -22,6 +22,23 @@ public class IntroManager : MonoBehaviour
         {
             SceneEngine.PopScene();
         }
+        else if (Input.anyKeyDown)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (Input.GetMouseButtonDown(i))
+                {
+                    return;
+                }
+            }
+            if (currentSplash == Splashes.Length - 1)
+            {
+                SceneEngine.PushScene(SceneEngine.Scenes.MENU);
+            }
+            Splashes[currentSplash].color = new Color(0, 0, 0, 0);
+            currentSplash++;
+            hitFullView = false;
+        }
     }
     void FixedUpdate()
     {
