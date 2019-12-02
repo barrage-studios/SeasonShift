@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class UICounter : MonoBehaviour
 {
@@ -119,7 +118,7 @@ public class UICounter : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
 
-        SceneManager.LoadScene("LevelSelect");
+        SceneEngine.PopScene();
 
     }
 }
