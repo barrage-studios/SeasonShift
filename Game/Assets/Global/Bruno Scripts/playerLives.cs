@@ -7,6 +7,7 @@ public class playerLives : MonoBehaviour {
 
     public GameObject initialspawnPos;
     public GameObject playerPrefab;
+    public GameObject pauseOverlay;
 
     public int lives;
     public static int points = 0;
@@ -17,7 +18,6 @@ public class playerLives : MonoBehaviour {
     public Text grazeCounter;
     public Text pointCounter;
     public Text lifeCounter;
-    public Text pauseText;
 
     public static int deathDetect = 0;
     public static int bossD = 0;
@@ -47,12 +47,12 @@ public class playerLives : MonoBehaviour {
             if (Time.timeScale != 0.0)
             {
                 Time.timeScale = 0.0f;
-                pauseText.color = (pauseText.color - new Color(0, 0, 0, 255));
+                pauseOverlay.SetActive(true);
             }
             else
             {
                 Time.timeScale = 1.0f;
-                pauseText.color = (pauseText.color + new Color(0, 0, 0, 255));
+                pauseOverlay.SetActive(false);
             }
         }
         if (Input.GetKeyDown(KeyCode.Backspace) && Time.timeScale == 0.0f)
