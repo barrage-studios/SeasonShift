@@ -34,7 +34,7 @@ public class playerLives : MonoBehaviour {
     {
         yield return new WaitForSeconds(5f);
 
-        SceneManager.LoadScene("LevelSelect");
+        SceneEngine.PopScene();
     }
 
     // Update is called once per frame
