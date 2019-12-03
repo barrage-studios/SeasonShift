@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2621343212755290216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.19, y: 1.6791172, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1678d289818b4c940a4be5c2868bcb7e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2475b6dc9f368e44cb8cd9de27157a59, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -143,6 +143,7 @@ MonoBehaviour:
   timeDelay: 7
   repeatTimeLimited: 0
   endTime: 0
+  sfx: {fileID: 7240909576823830151, guid: 6283b0b599bc575438ecb0176a38e4d5, type: 3}
   bullets: {fileID: 8356103588638205337, guid: d1eb87993f7362f4d801b9e1a4f5adad, type: 3}
   zRotation: 0
   timeInterval: 1
@@ -163,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBulletLayer: 10
-  life: 10
+  life: 7
   enemy: {fileID: 2621343212755290216}
   pointsPerHit: 10
 --- !u!114 &4645735093897460081

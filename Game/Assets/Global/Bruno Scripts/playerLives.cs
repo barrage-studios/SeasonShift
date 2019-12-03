@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class playerLives : MonoBehaviour {
 
     public GameObject initialspawnPos;
     public GameObject playerPrefab;
+    public GameObject pauseOverlay;
+
     public int lives;
     public static int points = 0;
     public static int bombs = 2;
     public static int graze = 0;
+
     public Text bombCounter;
     public Text grazeCounter;
     public Text pointCounter;
@@ -24,6 +26,8 @@ public class playerLives : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
+        bombs = 2;
+        lives = 3;
         lives = startAm;
         deathDetect = 0;
     }
@@ -32,12 +36,30 @@ public class playerLives : MonoBehaviour {
     {
         yield return new WaitForSeconds(5f);
 
-        SceneManager.LoadScene("LevelSelect");
+        SceneEngine.PopScene();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Time.timeScale != 0.0)
+            {
+                Time.timeScale = 0.0f;
+                pauseOverlay.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1.0f;
+                pauseOverlay.SetActive(false);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Backspace) && Time.timeScale == 0.0f)
+        {
+            SceneEngine.PopScene();
+        }
+
         if ((deathDetect > 0) & (lives > 0) & (playerManager.isKillable))
         {
             float xpos = initialspawnPos.GetComponent<Transform>().position.x;

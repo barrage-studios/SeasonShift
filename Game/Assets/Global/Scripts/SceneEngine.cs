@@ -31,7 +31,7 @@ public static class SceneEngine
     }
     public static void PopScene()
     {
-        if (SceneManager.GetActiveScene().buildIndex != 0)
+        if (SceneManager.GetActiveScene().buildIndex > 1)
         {
             SceneStack.Pop();
             SceneManager.LoadScene(SceneList[SceneStack.Peek()]);

@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2182165982497272462}
   - component: {fileID: 8487141339896132777}
   - component: {fileID: 142253447577180685}
-  - component: {fileID: 3025201800641453617}
   - component: {fileID: 6626212618669150575}
   - component: {fileID: 656224201581268459}
   - component: {fileID: 5694973316249476009}
+  - component: {fileID: -8464795286497604775}
   m_Layer: 12
   m_Name: gingerBread right
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5656246505403604120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.05144, y: 5.029013, z: -66.83594}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1678d289818b4c940a4be5c2868bcb7e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ec205bbda0642474aabc5be25314790b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,22 +101,6 @@ MonoBehaviour:
   life: 7
   enemy: {fileID: 5656246505403604120}
   pointsPerHit: 10
---- !u!58 &3025201800641453617
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5656246505403604120}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!50 &6626212618669150575
 Rigidbody2D:
   serializedVersion: 4
@@ -182,10 +166,27 @@ MonoBehaviour:
   timeDelay: 1
   repeatTimeLimited: 0
   endTime: 0
-  bullets: {fileID: 5898722245897435023, guid: 66bf8bfe63a43d54ca627d7ca8fab238, type: 3}
+  sfx: {fileID: 4183323598754501454, guid: 3579b15cbbc31c243aa52d6dcafbfa48, type: 3}
+  bullets: {fileID: 108902788136086333, guid: cc0124c232268cc47b269456d62e2694, type: 3}
   zRotation: 240
-  timeInterval: 0.5
+  timeInterval: 1.25
   changeInAngle: 7
   circleSpokes: 0
   startDegree: 250
   endDegree: 290
+--- !u!58 &-8464795286497604775
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5656246505403604120}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.030846596, y: 0}
+  serializedVersion: 2
+  m_Radius: 5.5903482
