@@ -60,9 +60,7 @@
 
 ### Technical Team
 [Faunsce](https://www.github.com/Faunsce) (Team Lead)  
-[AinzOolGown](https://github.com/AinzOolGown)  
-[BeuagradeA](https://github.com/BeuagradeA)  
-[Erollsia](https://github.com/erollsia)  
+[AinzOolGown](https://github.com/AinzOolGown)
 [Abedromerostudent](https://github.com/abedromerostudent)  
 
 ### Art Team
