@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 7323586183261704334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.9330745, y: 2.930121, z: -38.734375}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1678d289818b4c940a4be5c2868bcb7e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c584d0bfb75016b409af671c8e2e9c1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,9 +121,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.12790263, y: -2.3022606}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 7.87576
 --- !u!114 &4595573002763873436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +174,7 @@ MonoBehaviour:
   timeDelay: 5
   repeatTimeLimited: 0
   endTime: 0
+  sfx: {fileID: 4841459890851970729, guid: 17afecde77d1c7849b01db1f618aeb94, type: 3}
   bullets: {fileID: 7789136648754956153, guid: 708ce7c1f9b433d48bd216396f639e78, type: 3}
   zRotation: 240
   timeInterval: 2
@@ -202,6 +203,7 @@ MonoBehaviour:
   timeDelay: 5
   repeatTimeLimited: 0
   endTime: 0
+  sfx: {fileID: 0}
   bullets: {fileID: 7789136648754956153, guid: 708ce7c1f9b433d48bd216396f639e78, type: 3}
   zRotation: 270
   timeInterval: 2
@@ -230,6 +232,7 @@ MonoBehaviour:
   timeDelay: 5
   repeatTimeLimited: 0
   endTime: 0
+  sfx: {fileID: 4841459890851970729, guid: 17afecde77d1c7849b01db1f618aeb94, type: 3}
   bullets: {fileID: 7789136648754956153, guid: 708ce7c1f9b433d48bd216396f639e78, type: 3}
   zRotation: 300
   timeInterval: 2
