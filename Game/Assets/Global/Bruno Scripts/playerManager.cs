@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 
 public class playerManager : MonoBehaviour
@@ -179,7 +178,7 @@ public class playerManager : MonoBehaviour
                 Vector3 tempVect = new Vector3(h, v, 0);
                 topLayer.GetComponent<SpriteRenderer>().enabled = false;
 
-                tempVect = tempVect.normalized * secondSpeed * Time.fixedDeltaTime;
+                tempVect = tempVect.normalized * secondSpeed * Time.deltaTime;
                 GetComponent<Transform>().position += tempVect;
             }
             else // this is the general speed of the player
@@ -190,7 +189,7 @@ public class playerManager : MonoBehaviour
                 
 
                 Vector3 tempVect = new Vector3(h, v, 0);
-                tempVect = tempVect.normalized * firstSpeed * Time.fixedDeltaTime;
+                tempVect = tempVect.normalized * firstSpeed * Time.deltaTime;
                 GetComponent<Transform>().position += tempVect;
             }
         }

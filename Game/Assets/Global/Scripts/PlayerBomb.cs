@@ -43,7 +43,7 @@ public class PlayerBomb : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(bombActive == true && collision.gameObject.layer == 11)
+        if(bombActive == true && (collision.gameObject.layer == 11 || collision.gameObject.layer == 12))
         {
             Destroy(collision.gameObject);
         }
