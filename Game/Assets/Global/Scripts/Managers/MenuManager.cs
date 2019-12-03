@@ -6,12 +6,18 @@ public class MenuManager : MonoBehaviour
 {
     public Text nameText;
     public Text playtimeText;
-    // Start is called before the first frame update
+ 
     void Start()
     {
         nameText.text = GameData._instance.playerProfile.getName();
     }
-    // Update is called once per frame
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneEngine.PopScene();
+        }
+    }
     void FixedUpdate()
     {
         playtimeText.text = GameData._instance.getTime().ToString();
@@ -32,5 +38,22 @@ public class MenuManager : MonoBehaviour
     public void ExitClicked()
     {
         SceneEngine.CloseApp();
+    }
+
+    public void IsHovered(GameObject obj)
+    {
+        if (!obj.GetComponentInParent<Button>().interactable)
+            return;
+
+        Text text = obj.GetComponent<Text>();
+        text.color = new Color(248, 255, 0);
+    }
+    public void IsUnHovered(GameObject obj)
+    {
+        if (!obj.GetComponentInParent<Button>().interactable)
+            return;
+
+        Text text = obj.GetComponent<Text>();
+        text.color = new Color(255, 255, 255);
     }
 }
